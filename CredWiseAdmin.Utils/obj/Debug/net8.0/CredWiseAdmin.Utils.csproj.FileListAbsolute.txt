@@ -1,0 +1,14 @@
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\bin\Debug\net8.0\CredWiseAdmin.Utils.deps.json
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\bin\Debug\net8.0\CredWiseAdmin.Utils.runtimeconfig.json
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\bin\Debug\net8.0\CredWiseAdmin.Utils.dll
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\bin\Debug\net8.0\CredWiseAdmin.Utils.pdb
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.csproj.AssemblyReference.cache
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.GeneratedMSBuildEditorConfig.editorconfig
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.AssemblyInfoInputs.cache
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.AssemblyInfo.cs
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.csproj.CoreCompileInputs.cache
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.dll
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\refint\CredWiseAdmin.Utils.dll
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.pdb
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.genruntimeconfig.cache
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\ref\CredWiseAdmin.Utils.dll

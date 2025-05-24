@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredWiseAdmin.API", "CredWiseAdmin.API\CredWiseAdmin.API.csproj", "{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredWiseAdmin.Core", "CredWiseAdmin.Core\CredWiseAdmin.Core.csproj", "{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredWiseAdmin.Services", "CredWiseAdmin.Services\CredWiseAdmin.Services.csproj", "{DC316005-1BD4-48D2-8327-B0B9210F4DC4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredWiseAdmin.Repository", "CredWiseAdmin.Repository\CredWiseAdmin.Repository.csproj", "{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CredWiseAdmin.Utils", "CredWiseAdmin.Utils\CredWiseAdmin.Utils.csproj", "{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC316005-1BD4-48D2-8327-B0B9210F4DC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC316005-1BD4-48D2-8327-B0B9210F4DC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC316005-1BD4-48D2-8327-B0B9210F4DC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC316005-1BD4-48D2-8327-B0B9210F4DC4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {803DD39D-615C-49C8-8889-728B533C34CE}
+	EndGlobalSection
+EndGlobal

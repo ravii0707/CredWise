@@ -1,0 +1,125 @@
+﻿using CredWiseAdmin.Core.DTOs;
+using CredWiseAdmin.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace CredWiseAdmin.API.Controllers
+{
+    //[Authorize]
+    [Route("api/[controller]")]
+    [ApiController]
+    public class LoanApplicationsController : ControllerBase
+    {
+        private readonly ILoanApplicationService _loanApplicationService;
+
+        public LoanApplicationsController(ILoanApplicationService loanApplicationService)
+        {
+            _loanApplicationService = loanApplicationService;
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateLoanApplication([FromBody] LoanApplicationDto applicationDto)
+        {
+            var application = await _loanApplicationService.CreateLoanApplicationAsync(applicationDto);
+            return CreatedAtAction(nameof(GetLoanApplicationById), new { id = application.LoanApplicationId }, application);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<LoanApplicationResponseDto>> GetLoanApplicationById(int id)
+        {
+            var application = await _loanApplicationService.GetLoanApplicationByIdAsync(id);
+            if (application == null)
+            {
+                return NotFound();
+            }
+            return Ok(application);
+        }
+
+        [HttpGet("user/{userId}")]
+        public async Task<ActionResult<IEnumerable<LoanApplicationResponseDto>>> GetLoanApplicationsByUserId(int userId)
+        {
+            var applications = await _loanApplicationService.GetLoanApplicationsByUserIdAsync(userId);
+            return Ok(applications);
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpGet("pending")]
+        public async Task<ActionResult<IEnumerable<LoanApplicationResponseDto>>> GetPendingLoanApplications()
+        {
+            var applications = await _loanApplicationService.GetPendingLoanApplicationsAsync();
+            return Ok(applications);
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpGet("approved")]
+        public async Task<ActionResult<IEnumerable<LoanApplicationResponseDto>>> GetApprovedLoanApplications()
+        {
+            var applications = await _loanApplicationService.GetApprovedLoanApplicationsAsync();
+            return Ok(applications);
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPost("{id}/upload-documents")]
+        public async Task<IActionResult> UploadBankStatement(int id, [FromForm] UploadBankStatementDto uploadDto)
+        {
+            var result = await _loanApplicationService.UploadBankStatementAsync(id, uploadDto);
+            if (!result)
+            {
+                return BadRequest();
+            }
+            return NoContent();
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPost("{id}/send-to-decision-app")]
+        public async Task<IActionResult> SendToDecisionApp(int id)
+        {
+            var result = await _loanApplicationService.SendToDecisionAppAsync(id);
+            if (!result)
+            {
+                return BadRequest();
+            }
+            return NoContent();
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPut("{id}/update-status")]
+        public async Task<IActionResult> UpdateLoanStatus(int id, [FromBody] UpdateLoanStatusDto statusDto)
+        {
+            var result = await _loanApplicationService.UpdateLoanStatusAsync(id, statusDto.Status, statusDto.Reason);
+            if (!result)
+            {
+                return BadRequest();
+            }
+            return NoContent();
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPost("{id}/finalize-repayment")]
+        public async Task<IActionResult> FinalizeRepayment(int id)
+        {
+            var result = await _loanApplicationService.FinalizeRepaymentAsync(id);
+            if (!result)
+            {
+                return BadRequest();
+            }
+            return NoContent();
+        }
+
+        //[Authorize(Roles = "Admin")]
+        [HttpPost("{id}/generate-repayment-plan")]
+        public async Task<ActionResult<RepaymentPlanResponseDto>> GenerateRepaymentPlan(int id, [FromBody] EmiPlanDto emiPlanDto)
+        {
+            emiPlanDto.LoanId = id;
+            var plan = await _loanApplicationService.GenerateRepaymentPlanAsync(emiPlanDto);
+            return Ok(plan);
+        }
+        //[Authorize(Roles ="admin")]
+        [HttpPost("generate-repayment-plan")]
+        public async Task<ActionResult<RepaymentPlanResponseDto>> GenerateRepaymentPlan([FromBody] EmiPlanDto emiPlanDto)
+        {
+            var plan = await _loanApplicationService.GenerateRepaymentPlanAsync(emiPlanDto);
+            return Ok(plan);
+        }
+    }
+}

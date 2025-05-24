@@ -1,0 +1,1143 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\controllers\\loanrepaymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\controllers\\loanrepaymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\controllers\\loanproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\controllers\\loanproductscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\controllers\\loanapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\controllers\\loanapplicationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\controllers\\fdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\controllers\\fdcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\adminlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\adminlogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\implementation\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\interfaces\\iuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\exceptions\\repositoryexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\exceptions\\repositoryexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\exceptions\\customexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\exceptions\\customexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\exceptions\\conflictexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\exceptions\\conflictexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\context\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\mappings\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\mappings\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\loanrepaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\loanrepaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\loanapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\loanapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\loanproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\loanproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\filestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\filestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\fdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\fdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\implementation\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\implementation\\emailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\implementation\\paymenttransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\implementation\\paymenttransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\implementation\\loanrepaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\implementation\\loanrepaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\implementation\\loanproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\implementation\\loanproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\implementation\\loanbankstatementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\implementation\\loanbankstatementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\implementation\\loanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\implementation\\loanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\implementation\\fdrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\implementation\\fdrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\interfaces\\iloanrepaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\interfaces\\iloanrepaymentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\interfaces\\iloanproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\interfaces\\iloanproductrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.api\\credwiseadmin.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{CE1BB0F1-7121-4E22-A6BB-878C769CAA6A}|CredWiseAdmin.API\\CredWiseAdmin.API.csproj|solutionrelative:credwiseadmin.api\\credwiseadmin.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\interfaces\\iloanbankstatementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\interfaces\\iloanbankstatementrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\loanbankstatementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\loanbankstatementdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\uploaddocumentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\uploaddocumentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\loanproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\loanproductdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\loanapplicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\loanapplicationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\fddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\fddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\emiplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\emiplandto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\loanproductresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\loanproductresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\repaymentplanresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\repaymentplanresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\updateloanstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\updateloanstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\ifilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\ifilestorageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\ifdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\ifdservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\iloanrepaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\iloanrepaymentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\iloanapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\iloanapplicationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\iloanproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\iloanproductservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\interfaces\\ifdrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\interfaces\\ifdrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\interfaces\\iloanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\interfaces\\iloanapplicationrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.repository\\interfaces\\ipaymenttransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F91BEB14-EAAC-414C-BE93-5D72FB9EDB58}|CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj|solutionrelative:credwiseadmin.repository\\interfaces\\ipaymenttransactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\applypenaltydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\applypenaltydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\entities\\loanapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\entities\\loanapplication.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\entities\\decisionapplog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\entities\\decisionapplog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\loanenquirydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\loanenquirydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.core\\dtos\\loanrepaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5B5DCADF-97D7-4DE0-A030-3D53C4D90721}|CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj|solutionrelative:credwiseadmin.core\\dtos\\loanrepaymentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}|CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.utils\\credwiseadmin.utils.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}|CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj|solutionrelative:credwiseadmin.utils\\credwiseadmin.utils.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}|CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.utils\\entities\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{998573A0-B2FD-45B3-9FF9-DB28231B5AB5}|CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj|solutionrelative:credwiseadmin.utils\\entities\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|c:\\learning\\csharp\\training\\credwiseadmin\\credwiseadmin.services\\credwiseadmin.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{DC316005-1BD4-48D2-8327-B0B9210F4DC4}|CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj|solutionrelative:credwiseadmin.services\\credwiseadmin.services.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FDController.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\FDController.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Controllers\\FDController.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\FDController.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Controllers\\FDController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAswDQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:56:21.022Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoanApplicationsController.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\LoanApplicationsController.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Controllers\\LoanApplicationsController.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\LoanApplicationsController.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Controllers\\LoanApplicationsController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAswH0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:54:00.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoanProductsController.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\LoanProductsController.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Controllers\\LoanProductsController.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\LoanProductsController.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Controllers\\LoanProductsController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAswCYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:50:27.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoanRepaymentsController.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\LoanRepaymentsController.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Controllers\\LoanRepaymentsController.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\LoanRepaymentsController.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Controllers\\LoanRepaymentsController.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAswD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:55:22.51Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAADwv0IAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:49:21.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAuwF0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:47:29.121Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RegisterUserDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\RegisterUserDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\RegisterUserDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\RegisterUserDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\RegisterUserDto.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T15:47:06.437Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Program.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Program.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Program.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Program.cs",
+              "ViewState": "AgIAAIsAAAAAAAAAAAAiwJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T19:07:57.25Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\AuthService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\AuthService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\AuthService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\AuthService.cs",
+              "ViewState": "AgIAAEYAAAAAAAAAAAAiwFYAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:18:12.927Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\UserService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\UserService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\UserService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\UserService.cs",
+              "ViewState": "AgIAALQAAAAAAAAAAAAUwL4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:16:29.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AdminLoginDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\AdminLoginDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\AdminLoginDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\AdminLoginDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\AdminLoginDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T15:45:29.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\appsettings.json",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\appsettings.json",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\appsettings.json",
+              "RelativeToolTip": "CredWiseAdmin.API\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAADrAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-23T11:27:31.774Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\UserRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Implementation\\UserRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\UserRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Implementation\\UserRepository.cs",
+              "ViewState": "AgIAALkAAAAAAAAAAAAiwMIAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:10:56.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Interfaces\\IUserRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\IUserRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Interfaces\\IUserRepository.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:06:01.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:46:01.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "RepositoryException.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\RepositoryException.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\Exceptions\\RepositoryException.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\RepositoryException.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\Exceptions\\RepositoryException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:53:36.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CustomException.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\CustomException.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\Exceptions\\CustomException.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\CustomException.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\Exceptions\\CustomException.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAowAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:44:02.447Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "ConflictException.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\ConflictException.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\Exceptions\\ConflictException.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\ConflictException.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\Exceptions\\ConflictException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T07:42:53.171Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "BadRequestException.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\BadRequestException.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\Exceptions\\BadRequestException.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Exceptions\\BadRequestException.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\Exceptions\\BadRequestException.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:45:39.104Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Context\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Context\\AppDbContext.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Context\\AppDbContext.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Context\\AppDbContext.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAywCYAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:24:50.245Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AutoMapperProfile.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Mappings\\AutoMapperProfile.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Mappings\\AutoMapperProfile.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Mappings\\AutoMapperProfile.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Mappings\\AutoMapperProfile.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAswCcAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T19:06:42.877Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "LoanRepaymentService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\LoanRepaymentService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\LoanRepaymentService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\LoanRepaymentService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\LoanRepaymentService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAgwGwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:38:51.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "LoanApplicationService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\LoanApplicationService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\LoanApplicationService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\LoanApplicationService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\LoanApplicationService.cs",
+              "ViewState": "AgIAAAUBAAAAAAAAAAAAAJUBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:22:51.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "LoanProductService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\LoanProductService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\LoanProductService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\LoanProductService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\LoanProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:20:36.004Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "FileStorageService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\FileStorageService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\FileStorageService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\FileStorageService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\FileStorageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:46:35.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "FDService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\FDService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\FDService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\FDService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\FDService.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:40:08.393Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EmailService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\EmailService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Implementation\\EmailService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Implementation\\EmailService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Implementation\\EmailService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAcwA4AAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:42:47.494Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PaymentTransactionRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\PaymentTransactionRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Implementation\\PaymentTransactionRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\PaymentTransactionRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Implementation\\PaymentTransactionRepository.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:08:32.149Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "LoanRepaymentRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanRepaymentRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Implementation\\LoanRepaymentRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanRepaymentRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Implementation\\LoanRepaymentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:05:45.788Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "CredWiseAdmin.API\\Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwCgAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T06:46:36.137Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "LoanProductRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanProductRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Implementation\\LoanProductRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanProductRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Implementation\\LoanProductRepository.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAswIYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:59:44.848Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "LoanBankStatementRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanBankStatementRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Implementation\\LoanBankStatementRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanBankStatementRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Implementation\\LoanBankStatementRepository.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAqwIYAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:02:20.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "LoanApplicationRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanApplicationRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Implementation\\LoanApplicationRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\LoanApplicationRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Implementation\\LoanApplicationRepository.cs",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAqwLAAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:01:05.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "FDRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\FDRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Implementation\\FDRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Implementation\\FDRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Implementation\\FDRepository.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAqwIkAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:10:04.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IUserService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\IUserService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IUserService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\IUserService.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwBIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:11:54.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\appsettings.Development.json",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\appsettings.Development.json",
+              "RelativeToolTip": "CredWiseAdmin.API\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-23T20:38:35.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "CredWiseAdmin.API\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAkwEYAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-05-23T20:39:01.762Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "ILoanRepaymentRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanRepaymentRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Interfaces\\ILoanRepaymentRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanRepaymentRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Interfaces\\ILoanRepaymentRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAgwAYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:53:18.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "ILoanProductRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanProductRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Interfaces\\ILoanProductRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanProductRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Interfaces\\ILoanProductRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:07:10.108Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "CredWiseAdmin.API.csproj",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
+              "RelativeDocumentMoniker": "CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
+              "RelativeToolTip": "CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-23T20:09:29.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ILoanBankStatementRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanBankStatementRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Interfaces\\ILoanBankStatementRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanBankStatementRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Interfaces\\ILoanBankStatementRepository.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAAA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:07:46.283Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "LoanBankStatementDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanBankStatementDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\LoanBankStatementDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanBankStatementDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\LoanBankStatementDto.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAswBwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:05:10.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "UploadDocumentDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\UploadDocumentDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\UploadDocumentDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\UploadDocumentDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\UploadDocumentDto.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAADwvw4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T15:49:26.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "LoanProductDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanProductDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\LoanProductDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanProductDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\LoanProductDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:03:29.681Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "LoanApplicationDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanApplicationDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\LoanApplicationDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanApplicationDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\LoanApplicationDto.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAiwDgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:04:12.62Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "FDDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\FDDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\FDDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\FDDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\FDDto.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAA8wD8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:06:19.229Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "EmiPlanDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\EmiPlanDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\EmiPlanDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\EmiPlanDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\EmiPlanDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T15:50:43.954Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "LoanProductResponseDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanProductResponseDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\LoanProductResponseDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanProductResponseDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\LoanProductResponseDto.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAA4wDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T19:02:10.336Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "RepaymentPlanResponseDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\RepaymentPlanResponseDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\RepaymentPlanResponseDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\RepaymentPlanResponseDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\RepaymentPlanResponseDto.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwA4AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:58:23.486Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "UpdateLoanStatusDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\UpdateLoanStatusDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\UpdateLoanStatusDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\UpdateLoanStatusDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\UpdateLoanStatusDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:27:36.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "IFileStorageService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IFileStorageService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\IFileStorageService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IFileStorageService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\IFileStorageService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:45:12.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "IEmailService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IEmailService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\IEmailService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IEmailService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\IEmailService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:41:48.141Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "IFDService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IFDService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\IFDService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IFDService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\IFDService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:15:55.304Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "ILoanRepaymentService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\ILoanRepaymentService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\ILoanRepaymentService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\ILoanRepaymentService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\ILoanRepaymentService.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBAAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:15:14.258Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "ILoanApplicationService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\ILoanApplicationService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\ILoanApplicationService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\ILoanApplicationService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\ILoanApplicationService.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAowBQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:13:52.234Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "ILoanProductService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\ILoanProductService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\ILoanProductService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\ILoanProductService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\ILoanProductService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:13:17.184Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "CredWiseAdmin.Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T18:12:29.278Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "ILoanApplicationRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanApplicationRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Interfaces\\ILoanApplicationRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\ILoanApplicationRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Interfaces\\ILoanApplicationRepository.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAxwA8AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:06:33.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "IFDRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\IFDRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Interfaces\\IFDRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\IFDRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Interfaces\\IFDRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAApwBEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:57:34.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "IPaymentTransactionRepository.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\IPaymentTransactionRepository.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Repository\\Interfaces\\IPaymentTransactionRepository.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\Interfaces\\IPaymentTransactionRepository.cs",
+              "RelativeToolTip": "CredWiseAdmin.Repository\\Interfaces\\IPaymentTransactionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:56:28.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "ApplyPenaltyDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\ApplyPenaltyDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\ApplyPenaltyDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\ApplyPenaltyDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\ApplyPenaltyDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T17:28:30.022Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "DecisionAppLog.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Entities\\DecisionAppLog.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\Entities\\DecisionAppLog.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Entities\\DecisionAppLog.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\Entities\\DecisionAppLog.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAAwCEAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T15:42:54.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "LoanApplication.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Entities\\LoanApplication.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\Entities\\LoanApplication.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\Entities\\LoanApplication.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\Entities\\LoanApplication.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAAwE8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:26:49.824Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "LoanEnquiryDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanEnquiryDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\LoanEnquiryDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanEnquiryDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\LoanEnquiryDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAywBMAAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:06:49.516Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "LoanRepaymentDto.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanRepaymentDto.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Core\\DTOs\\LoanRepaymentDto.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\DTOs\\LoanRepaymentDto.cs",
+              "RelativeToolTip": "CredWiseAdmin.Core\\DTOs\\LoanRepaymentDto.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAUwCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T16:05:48.464Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "CredWiseAdmin.Services.csproj",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+              "RelativeToolTip": "CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAkwAsAAABQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-23T12:05:33.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Utils\\Entities\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Utils\\Entities\\AppDbContext.cs",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Utils\\Entities\\AppDbContext.cs",
+              "RelativeToolTip": "CredWiseAdmin.Utils\\Entities\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T13:30:49.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "CredWiseAdmin.Utils.csproj",
+              "DocumentMoniker": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj",
+              "RelativeDocumentMoniker": "CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj",
+              "ToolTip": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj",
+              "RelativeToolTip": "CredWiseAdmin.Utils\\CredWiseAdmin.Utils.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-05-22T13:28:25.328Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
