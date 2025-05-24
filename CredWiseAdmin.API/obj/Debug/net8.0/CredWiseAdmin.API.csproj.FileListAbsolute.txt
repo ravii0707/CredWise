@@ -105,3 +105,5 @@ C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\ref
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.pdb
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.genruntimeconfig.cache
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\ref\CredWiseAdmin.API.dll
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.staticwebassets.runtime.json
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.sourcelink.json

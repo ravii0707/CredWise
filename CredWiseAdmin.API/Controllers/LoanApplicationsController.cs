@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CredWiseAdmin.API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class LoanApplicationsController : ControllerBase
@@ -42,7 +42,7 @@ namespace CredWiseAdmin.API.Controllers
             return Ok(applications);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet("pending")]
         public async Task<ActionResult<IEnumerable<LoanApplicationResponseDto>>> GetPendingLoanApplications()
         {
@@ -50,7 +50,7 @@ namespace CredWiseAdmin.API.Controllers
             return Ok(applications);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet("approved")]
         public async Task<ActionResult<IEnumerable<LoanApplicationResponseDto>>> GetApprovedLoanApplications()
         {
@@ -58,7 +58,7 @@ namespace CredWiseAdmin.API.Controllers
             return Ok(applications);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("{id}/upload-documents")]
         public async Task<IActionResult> UploadBankStatement(int id, [FromForm] UploadBankStatementDto uploadDto)
         {
@@ -70,7 +70,7 @@ namespace CredWiseAdmin.API.Controllers
             return NoContent();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("{id}/send-to-decision-app")]
         public async Task<IActionResult> SendToDecisionApp(int id)
         {
@@ -82,7 +82,7 @@ namespace CredWiseAdmin.API.Controllers
             return NoContent();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}/update-status")]
         public async Task<IActionResult> UpdateLoanStatus(int id, [FromBody] UpdateLoanStatusDto statusDto)
         {
@@ -94,7 +94,7 @@ namespace CredWiseAdmin.API.Controllers
             return NoContent();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("{id}/finalize-repayment")]
         public async Task<IActionResult> FinalizeRepayment(int id)
         {
@@ -106,7 +106,7 @@ namespace CredWiseAdmin.API.Controllers
             return NoContent();
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("{id}/generate-repayment-plan")]
         public async Task<ActionResult<RepaymentPlanResponseDto>> GenerateRepaymentPlan(int id, [FromBody] EmiPlanDto emiPlanDto)
         {
@@ -114,7 +114,7 @@ namespace CredWiseAdmin.API.Controllers
             var plan = await _loanApplicationService.GenerateRepaymentPlanAsync(emiPlanDto);
             return Ok(plan);
         }
-        //[Authorize(Roles ="admin")]
+        [Authorize(Roles ="admin")]
         [HttpPost("generate-repayment-plan")]
         public async Task<ActionResult<RepaymentPlanResponseDto>> GenerateRepaymentPlan([FromBody] EmiPlanDto emiPlanDto)
         {

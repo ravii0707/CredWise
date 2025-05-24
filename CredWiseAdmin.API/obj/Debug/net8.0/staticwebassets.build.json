@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "5mWFtT1S2j9MoIxWzOGeOllpjk8//fiTs7+peWwaHJw=",
+  "Hash": "ZeYsp3VgnAGLC6v/S7hGjzj57AFVQJXhe8E9u/L11GM=",
   "Source": "CredWiseAdmin.API",
   "BasePath": "_content/CredWiseAdmin.API",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CredWiseAdmin.API\\wwwroot",
+      "Source": "CredWiseAdmin.API",
+      "ContentRoot": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\wwwroot\\",
+      "BasePath": "_content/CredWiseAdmin.API",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }
