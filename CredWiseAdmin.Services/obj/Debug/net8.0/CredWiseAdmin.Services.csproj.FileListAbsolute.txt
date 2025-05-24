@@ -10,9 +10,9 @@ C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.AssemblyInfoInputs.cache
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.AssemblyInfo.cs
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.csproj.CoreCompileInputs.cache
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.sourcelink.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWise.1B5E4E67.Up2Date
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.dll
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\refint\CredWiseAdmin.Services.dll
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.pdb
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\ref\CredWiseAdmin.Services.dll
-C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.sourcelink.json

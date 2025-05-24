@@ -1,7 +1,7 @@
 [
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.UsersController",
-    "Method": "GetAllUsers",
+    "Method": "GetAllUsersAsync",
     "RelativePath": "api/admin/users",
     "HttpMethod": "GET",
     "IsController": true,
@@ -21,7 +21,7 @@
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.UsersController",
-    "Method": "GetUserById",
+    "Method": "GetUserByIdAsync",
     "RelativePath": "api/admin/users/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -47,7 +47,7 @@
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.UsersController",
-    "Method": "UpdateUser",
+    "Method": "UpdateUserAsync",
     "RelativePath": "api/admin/users/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -68,7 +68,7 @@
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.UsersController",
-    "Method": "DeactivateUser",
+    "Method": "DeactivateUserAsync",
     "RelativePath": "api/admin/users/{id}/deactivate",
     "HttpMethod": "PUT",
     "IsController": true,
@@ -84,7 +84,7 @@
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.UsersController",
-    "Method": "RegisterUser",
+    "Method": "RegisterUserAsync",
     "RelativePath": "api/admin/users/register",
     "HttpMethod": "POST",
     "IsController": true,
@@ -93,6 +93,22 @@
       {
         "Name": "registerDto",
         "Type": "RegisterUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.UsersController",
+    "Method": "TestUserLogin",
+    "RelativePath": "api/admin/users/test-login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loginDto",
+        "Type": "TestLoginDto",
         "IsRequired": true
       }
     ],

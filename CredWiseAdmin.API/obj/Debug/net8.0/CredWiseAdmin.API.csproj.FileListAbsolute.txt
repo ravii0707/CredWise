@@ -1,5 +1,6 @@
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\appsettings.json
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.staticwebassets.runtime.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.staticwebassets.endpoints.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.exe
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.deps.json
@@ -88,6 +89,7 @@ C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\Cre
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.csproj.CoreCompileInputs.cache
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.MvcApplicationPartsAssemblyInfo.cs
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.sourcelink.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\scopedcss\bundle\CredWiseAdmin.API.styles.css
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\staticwebassets.build.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\staticwebassets.development.json
@@ -105,5 +107,3 @@ C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\ref
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.pdb
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.genruntimeconfig.cache
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\ref\CredWiseAdmin.API.dll
-C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.staticwebassets.runtime.json
-C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.API\obj\Debug\net8.0\CredWiseAdmin.API.sourcelink.json

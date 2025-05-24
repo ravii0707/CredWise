@@ -74,8 +74,8 @@ namespace CredWiseAdmin.API.Controllers
         {
             try
             {
-                var token = await _authService.AuthenticateAsync(loginDto);
-                return Ok(new { Token = token });
+                var response = await _authService.AuthenticateAsync(loginDto);
+                return Ok(response);  // Now returns all user details with token
             }
             catch (UnauthorizedAccessException ex)
             {

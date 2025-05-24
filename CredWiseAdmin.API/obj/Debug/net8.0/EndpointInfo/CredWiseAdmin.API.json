@@ -1201,6 +1201,42 @@
           }
         }
       }
+    },
+    "/api/admin/users/test-login": {
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestLoginDto"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestLoginDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestLoginDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/TestLoginDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -1797,32 +1833,37 @@
           "firstName",
           "lastName",
           "password",
-          "phoneNumber",
-          "role"
+          "phoneNumber"
         ],
         "type": "object",
         "properties": {
           "firstName": {
-            "minLength": 1,
+            "maxLength": 50,
+            "minLength": 2,
+            "pattern": "^[a-zA-Z]+$",
             "type": "string"
           },
           "lastName": {
-            "minLength": 1,
+            "maxLength": 50,
+            "minLength": 2,
+            "pattern": "^[a-zA-Z]+$",
             "type": "string"
           },
           "email": {
             "minLength": 1,
+            "pattern": "^[a-z0-9]+@(gmail\\.com|credwise\\.com)$",
             "type": "string",
             "format": "email"
           },
           "phoneNumber": {
             "minLength": 1,
-            "type": "string",
-            "format": "tel"
+            "pattern": "^[6-9]\\d{9}$",
+            "type": "string"
           },
           "role": {
-            "minLength": 1,
-            "type": "string"
+            "pattern": "^(Customer|Admin)$",
+            "type": "string",
+            "nullable": true
           },
           "password": {
             "minLength": 8,
@@ -1873,6 +1914,25 @@
               "$ref": "#/components/schemas/LoanRepaymentDto"
             },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TestLoginDto": {
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "minLength": 1,
+            "type": "string",
+            "format": "email"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
           }
         },
         "additionalProperties": false

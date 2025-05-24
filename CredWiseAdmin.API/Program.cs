@@ -46,10 +46,12 @@ builder.Services.AddScoped<IFDService, FDService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IFileStorageService>(provider =>
     new FileStorageService(builder.Configuration["FileStorage:BasePath"]));
+builder.Services.AddHttpContextAccessor();
 
 // Configure AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
+builder.Services.AddHttpContextAccessor();
 // Configure JWT authentication
 var jwtSettings = builder.Configuration.GetSection("Jwt");
 var key = Encoding.ASCII.GetBytes(jwtSettings["Secret"]);

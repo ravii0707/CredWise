@@ -30,7 +30,7 @@ namespace CredWiseAdmin.Services.Implementation
             _logger = logger;
         }
 
-        public async Task<string> AuthenticateAsync(AdminLoginDto loginDto)
+        public async Task<LoginResponseDto> AuthenticateAsync(AdminLoginDto loginDto)
         {
             try
             {
@@ -51,7 +51,17 @@ namespace CredWiseAdmin.Services.Implementation
                     throw new UnauthorizedAccessException("Admin privileges required");
                 }
 
-                return GenerateJwtToken(user);
+                var token = GenerateJwtToken(user);
+
+                return new LoginResponseDto
+                {
+                    Token = token,
+                    Email = user.Email,
+                    Name = user.FirstName,
+                    PhoneNumber = user.PhoneNumber,
+                    Role = user.Role,
+                    UserId = user.UserId
+                };
             }
             catch (Exception ex)
             {

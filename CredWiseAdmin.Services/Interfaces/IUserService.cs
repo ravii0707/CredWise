@@ -15,5 +15,6 @@ namespace CredWiseAdmin.Services.Interfaces
         Task<bool> UpdateUserAsync(int id, UpdateUserDto updateDto);
         Task<bool> AdminExists();
         Task<int> CountAdmins();
+        Task<bool> ValidateUserCredentialsAsync(string email, string password);
     }
 }
