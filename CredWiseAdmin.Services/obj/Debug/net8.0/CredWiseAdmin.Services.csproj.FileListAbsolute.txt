@@ -15,3 +15,4 @@ C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\refint\CredWiseAdmin.Services.dll
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.pdb
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\ref\CredWiseAdmin.Services.dll
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Services\obj\Debug\net8.0\CredWiseAdmin.Services.sourcelink.json

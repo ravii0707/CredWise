@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CredWiseAdmin.API.Controllers
 {
-    //[Authorize(Roles = "Admin")]
+    [Authorize(Roles = "Admin")]
     [Route("api/admin/users")]
     [ApiController]
     public class UsersController : ControllerBase

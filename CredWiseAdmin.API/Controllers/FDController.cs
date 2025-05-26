@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CredWiseAdmin.API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class FDController : ControllerBase

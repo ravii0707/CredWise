@@ -12,3 +12,4 @@ C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\r
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.pdb
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.genruntimeconfig.cache
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\ref\CredWiseAdmin.Utils.dll
+C:\Learning\CSharp\Training\CredWiseAdmin\CredWiseAdmin.Utils\obj\Debug\net8.0\CredWiseAdmin.Utils.sourcelink.json

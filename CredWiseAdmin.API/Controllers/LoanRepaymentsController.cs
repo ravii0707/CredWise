@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CredWiseAdmin.API.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class LoanRepaymentsController : ControllerBase
@@ -31,7 +31,7 @@ namespace CredWiseAdmin.API.Controllers
             return Ok(transaction);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPost("{repaymentId}/penalty")]
         public async Task<IActionResult> ApplyPenalty(int repaymentId)
         {
@@ -50,7 +50,7 @@ namespace CredWiseAdmin.API.Controllers
             return Ok(repayments);
         }
 
-        //[Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpGet("overdue")]
         public async Task<ActionResult<IEnumerable<LoanRepaymentDto>>> GetOverdueRepayments()
         {
