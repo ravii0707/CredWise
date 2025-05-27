@@ -33,19 +33,27 @@ namespace CredWiseAdmin.Services.Implementation
 
         public async Task SendUserRegistrationEmailAsync(string recipientEmail, string password)
         {
-            if (string.IsNullOrWhiteSpace(recipientEmail))
-                throw new ArgumentException("Recipient email cannot be empty", nameof(recipientEmail));
-            if (string.IsNullOrWhiteSpace(password))
-                throw new ArgumentException("Password cannot be empty", nameof(password));
+            try
+            {
+                if (string.IsNullOrWhiteSpace(recipientEmail))
+                    throw new ArgumentException("Recipient email cannot be empty", nameof(recipientEmail));
+                if (string.IsNullOrWhiteSpace(password))
+                    throw new ArgumentException("Password cannot be empty", nameof(password));
 
-            var subject = "Welcome to CredWise - Your Account Credentials";
-            var template = await GetEmailTemplate("UserRegistration.html");
-            var body = template
-                .Replace("{{Email}}", recipientEmail)
-                .Replace("{{Password}}", password)
-                .Replace("{{LoginUrl}}", _configuration["AppSettings:LoginUrl"] ?? "https://app.credwise.com/login");
+                var subject = "Welcome to CredWise - Your Account Credentials";
+                var template = await GetEmailTemplate("UserRegistration.html");
+                var body = template
+                    .Replace("{{Email}}", recipientEmail)
+                    .Replace("{{Password}}", password)
+                    .Replace("{{LoginUrl}}", _configuration["AppSettings:LoginUrl"] ?? "https://app.credwise.com/login");
 
-            await SendEmailAsync(recipientEmail, subject, body, true);
+                await SendEmailAsync(recipientEmail, subject, body, true);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to send registration email to {Email}. Error: {ErrorMessage}", recipientEmail, ex.Message);
+                throw new ApplicationException($"Failed to send registration email: {ex.Message}", ex);
+            }
         }
 
         public async Task SendLoanApprovalEmailAsync(string email, int loanApplicationId)
@@ -111,7 +119,7 @@ namespace CredWiseAdmin.Services.Implementation
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error reading email template {TemplateName}", templateName);
+                _logger.LogError(ex, "Error reading email template {TemplateName}. Error: {ErrorMessage}", templateName, ex.Message);
                 return await GetDefaultTemplate();
             }
         }
@@ -146,79 +154,55 @@ namespace CredWiseAdmin.Services.Implementation
 
         private async Task SendEmailAsync(string recipientEmail, string subject, string body, bool isHtml = false)
         {
-            const int maxRetries = 3;
-            var retryCount = 0;
-
-            while (retryCount < maxRetries)
+            try
             {
-                try
+                // Add validation
+                if (string.IsNullOrWhiteSpace(recipientEmail))
+                    throw new ArgumentException("Recipient email cannot be empty");
+
+                var message = new MimeMessage();
+                message.From.Add(new MailboxAddress(
+                    _configuration["Email:DisplayName"] ?? "CredWise Admin",
+                    _configuration["Email:From"] ?? "noreply@credwise.com"));
+
+                message.To.Add(MailboxAddress.Parse(recipientEmail));
+                message.Subject = subject;
+
+                var bodyBuilder = new BodyBuilder();
+                if (isHtml)
                 {
-                    var message = new MimeMessage();
-                    message.From.Add(new MailboxAddress(
-                        _configuration["Email:DisplayName"] ?? "CredWise Admin",
-                        _configuration["Email:From"] ?? "noreply@credwise.com"));
-
-                    message.To.Add(MailboxAddress.Parse(recipientEmail));
-                    message.Subject = subject;
-
-                    var bodyBuilder = new BodyBuilder();
-                    if (isHtml)
-                    {
-                        bodyBuilder.HtmlBody = body;
-                    }
-                    else
-                    {
-                        bodyBuilder.TextBody = body;
-                    }
-                    message.Body = bodyBuilder.ToMessageBody();
-
-                    using var client = new SmtpClient();
-
-                    // Get port with fallback
-                    if (!int.TryParse(_configuration["Email:Port"], out int port))
-                    {
-                        port = 587; // Default SMTP port
-                    }
-
-                    // Add timeout to prevent hanging
-                    var timeout = 30;
-                    if (int.TryParse(_configuration["Email:Timeout"], out int configuredTimeout))
-                    {
-                        timeout = configuredTimeout;
-                    }
-                    client.Timeout = timeout * 1000;
-
-                    await client.ConnectAsync(
-                        _configuration["Email:Host"] ?? "smtp.gmail.com",
-                        port,
-                        SecureSocketOptions.StartTls);
-
-                    var username = _configuration["Email:Username"] ?? throw new ArgumentNullException("Email:Username is not configured");
-                    var password = _configuration["Email:Password"] ?? throw new ArgumentNullException("Email:Password is not configured");
-
-                    await client.AuthenticateAsync(username, password);
-                    await client.SendAsync(message);
-                    await client.DisconnectAsync(true);
-
-                    _logger.LogInformation("Email sent successfully to {Recipient}", recipientEmail);
-                    return;
+                    bodyBuilder.HtmlBody = body;
                 }
-                catch (AuthenticationException ex)
+                else
                 {
-                    _logger.LogError(ex, "SMTP authentication failed. Please check email credentials");
-                    throw new ApplicationException("SMTP authentication failed. Please check your email credentials.", ex);
+                    bodyBuilder.TextBody = body;
                 }
-                catch (Exception ex)
-                {
-                    retryCount++;
-                    if (retryCount == maxRetries)
-                    {
-                        _logger.LogError(ex, "Failed to send email to {Recipient} after {RetryCount} attempts", recipientEmail, retryCount);
-                        throw new ApplicationException($"Failed to send email after {maxRetries} attempts: {ex.Message}", ex);
-                    }
-                    _logger.LogWarning(ex, "Failed to send email to {Recipient}, attempt {RetryCount} of {MaxRetries}", recipientEmail, retryCount, maxRetries);
-                    await Task.Delay(1000 * retryCount); // Exponential backoff
-                }
+                message.Body = bodyBuilder.ToMessageBody();
+
+                using var client = new SmtpClient();
+
+                // Get configuration values with proper error handling
+                var host = _configuration["Email:Host"] ?? throw new InvalidOperationException("SMTP host not configured");
+                var port = int.Parse(_configuration["Email:Port"] ?? "587");
+                var username = _configuration["Email:Username"] ?? throw new InvalidOperationException("SMTP username not configured");
+                var password = _configuration["Email:Password"] ?? throw new InvalidOperationException("SMTP password not configured");
+
+                await client.ConnectAsync(host, port, SecureSocketOptions.StartTls);
+                await client.AuthenticateAsync(username, password);
+                await client.SendAsync(message);
+                await client.DisconnectAsync(true);
+
+                _logger.LogInformation("Email sent successfully to {Recipient}", recipientEmail);
+            }
+            catch (AuthenticationException ex)
+            {
+                _logger.LogError(ex, "SMTP authentication failed. Please check credentials");
+                throw new ApplicationException("Email sending failed due to authentication error", ex);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to send email to {Recipient}", recipientEmail);
+                throw;
             }
         }
     }
