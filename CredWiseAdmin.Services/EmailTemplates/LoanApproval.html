@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Loan Application Approved - CredWise</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .approval-box {
+        background-color: #e8f5e9;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px 0;
+        border-left: 4px solid #4caf50;
+      }
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+      .footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        font-size: 12px;
+        color: #666;
+      }
+      .highlight {
+        font-weight: bold;
+        color: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Congratulations! Your Loan Application Has Been Approved</h2>
+
+    <div class="approval-box">
+      <p>
+        We are pleased to inform you that your loan application
+        <span class="highlight">#{{LoanApplicationId}}</span> has been approved.
+      </p>
+    </div>
+
+    <p>Next Steps:</p>
+    <ol>
+      <li>Review your loan details in your CredWise account</li>
+      <li>Sign the loan agreement</li>
+      <li>Complete any additional required documentation</li>
+    </ol>
+
+    <p>
+      If you have any questions or need assistance, please don't hesitate to
+      contact our support team:
+    </p>
+    <p>Email: {{SupportEmail}}</p>
+
+    <div class="footer">
+      <p>
+        This is an automated message from CredWise. Please do not reply to this
+        email.
+      </p>
+      <p>For security reasons, please do not share this email with anyone.</p>
+    </div>
+  </body>
+</html>

@@ -28,6 +28,8 @@ The solution is organized into the following projects:
    - Service interfaces
    - AutoMapper profiles
    - Validation logic
+   - Email notification system
+   - Email templates
 
 4. **CredWiseAdmin.Repository**
    - Database context
@@ -55,7 +57,15 @@ The solution is organized into the following projects:
    - Track application status
    - Process application workflows
 
-4. **Integration**
+4. **Email Notification System**
+
+   - User registration notifications
+   - Loan approval notifications
+   - Loan rejection notifications
+   - Payment confirmation notifications
+   - HTML email templates with responsive design
+
+5. **Integration**
    - Authentication and authorization
    - External system integration
    - Logging and monitoring
@@ -77,6 +87,7 @@ The core layer contains the domain entities and interfaces that define the busin
 - `ILoanTypeRepository`: Repository interface for loan types
 - `ILoanTypeService`: Service interface for loan type operations
 - `IUnitOfWork`: Unit of work pattern interface
+- `IEmailService`: Service interface for email notifications
 
 ### 2. Repository Layer (CredWiseAdmin.Repository)
 
@@ -97,6 +108,47 @@ The service layer implements business logic and orchestrates operations.
 - `LoanTypeService`: Manages loan type operations
 - `FDTypeService`: Manages FD type operations
 - `LoanApplicationService`: Handles loan application processing
+- `EmailService`: Handles email notifications
+
+#### Email Notification System:
+
+The email notification system is implemented in the `EmailService` class and includes:
+
+1. **User Registration Email**
+
+   - Sends welcome email with login credentials
+   - Includes login URL and password
+   - Styled with professional HTML template
+
+2. **Loan Approval Email**
+
+   - Notifies users of approved loan applications
+   - Includes loan application ID
+   - Provides next steps and support contact
+
+3. **Loan Rejection Email**
+
+   - Notifies users of rejected loan applications
+   - Includes rejection reason
+   - Provides support contact information
+   - Offers guidance for future applications
+
+4. **Payment Confirmation Email**
+   - Confirms successful payment
+   - Includes transaction ID and date
+   - Provides transaction details
+   - Includes record-keeping reminder
+
+#### Email Templates:
+
+All email templates are stored in the `EmailTemplates` directory and include:
+
+- Responsive HTML design
+- Professional styling
+- Clear typography
+- Color-coded status indicators
+- Security notices
+- Footer with important information
 
 ### 4. API Layer (CredWiseAdmin.API)
 
@@ -107,6 +159,7 @@ The API layer exposes endpoints for client applications.
 - `LoanTypesController`: Handles loan type operations
 - `ErrorHandlingMiddleware`: Global error handling
 - `ServiceCollectionExtensions`: Dependency injection setup
+- `EmailsController`: Handles email-related operations
 
 ## Best Practices
 
@@ -133,12 +186,14 @@ The API layer exposes endpoints for client applications.
    - JWT-based authentication
    - Role-based authorization
    - Secure configuration management
+   - Secure email handling
 
 5. **Performance**
 
    - Async/await throughout
    - Caching implementation
    - Optimized database queries
+   - Non-blocking email sending
 
 6. **Testing**
    - Unit tests for services
@@ -153,6 +208,26 @@ The API layer exposes endpoints for client applications.
 {
   "ConnectionStrings": {
     "DefaultConnection": "Server=.;Database=CredWiseAdmin;Trusted_Connection=True;"
+  }
+}
+```
+
+### Email Configuration
+
+```json
+{
+  "Email": {
+    "Host": "smtp.example.com",
+    "Port": 587,
+    "Username": "noreply@credwise.com",
+    "Password": "your-smtp-password",
+    "From": "noreply@credwise.com",
+    "DisplayName": "CredWise Admin"
+  },
+  "AppSettings": {
+    "LoginUrl": "https://app.credwise.com/login",
+    "SupportEmail": "support@credwise.com",
+    "SupportPhone": "+1 (800) 123-4567"
   }
 }
 ```
@@ -200,8 +275,18 @@ The API layer exposes endpoints for client applications.
    - XML comments for public APIs
    - README files for each project
    - API documentation with Swagger
+   - Keep email templates well-documented
+   - Maintain clear configuration documentation
 
-4. **Version Control**
+4. **Email Template Guidelines**
+
+   - Use responsive design
+   - Include clear call-to-actions
+   - Maintain consistent branding
+   - Ensure accessibility
+   - Test across email clients
+
+5. **Version Control**
    - Use feature branches
    - Write meaningful commit messages
    - Review code before merging

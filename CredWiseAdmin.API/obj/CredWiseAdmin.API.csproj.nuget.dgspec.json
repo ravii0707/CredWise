@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj": {}
+    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj": {}
   },
   "projects": {
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj": {
+    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
+        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
         "projectName": "CredWiseAdmin.API",
-        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
+        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
         "packagesPath": "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\",
-        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\obj\\",
+        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj"
+              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
+                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj"
               },
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj"
+              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {
+                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj"
               }
             }
           }
@@ -103,14 +103,14 @@
         }
       }
     },
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
+    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
+        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
         "projectName": "CredWiseAdmin.Core",
-        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
+        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
         "packagesPath": "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\",
-        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\obj\\",
+        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -178,14 +178,14 @@
         }
       }
     },
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
+    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
+        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
         "projectName": "CredWiseAdmin.Repository",
-        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
+        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
         "packagesPath": "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\",
-        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\obj\\",
+        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -206,8 +206,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
+              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
+                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
               }
             }
           }
@@ -261,14 +261,14 @@
         }
       }
     },
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {
+    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
         "projectName": "CredWiseAdmin.Services",
-        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
         "packagesPath": "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\",
-        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Services\\obj\\",
+        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -289,11 +289,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
+              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
+                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
               },
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj"
+              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
+                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj"
               }
             }
           }

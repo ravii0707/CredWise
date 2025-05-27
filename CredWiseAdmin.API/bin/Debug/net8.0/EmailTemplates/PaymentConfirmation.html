@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Payment Confirmation - CredWise</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        color: #333;
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .confirmation-box {
+        background-color: #e3f2fd;
+        padding: 20px;
+        border-radius: 5px;
+        margin: 20px 0;
+        border-left: 4px solid #2196f3;
+      }
+      .transaction-details {
+        background-color: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+        margin: 20px 0;
+      }
+      .footer {
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid #eee;
+        font-size: 12px;
+        color: #666;
+      }
+      .highlight {
+        font-weight: bold;
+        color: #2196f3;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Payment Confirmation</h2>
+
+    <div class="confirmation-box">
+      <p>We are pleased to confirm that we have received your payment.</p>
+    </div>
+
+    <div class="transaction-details">
+      <p><strong>Transaction Details:</strong></p>
+      <p>Transaction ID: <span class="highlight">#{{TransactionId}}</span></p>
+      <p>Date: <span class="highlight">{{Date}}</span></p>
+    </div>
+
+    <p>
+      Your payment has been successfully processed and will be reflected in your
+      account shortly.
+    </p>
+
+    <p>
+      If you have any questions about this transaction, please contact our
+      support team.
+    </p>
+
+    <div class="footer">
+      <p>
+        This is an automated message from CredWise. Please do not reply to this
+        email.
+      </p>
+      <p>For security reasons, please do not share this email with anyone.</p>
+      <p>Keep this email for your records.</p>
+    </div>
+  </body>
+</html>
