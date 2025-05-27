@@ -22,6 +22,15 @@ namespace CredWiseAdmin.Services.Implementation
         private readonly IMapper _mapper;
         private readonly IFileStorageService _fileStorageService;
         private readonly ILogger<LoanApplicationService> _logger;
+        private readonly IEmailService _emailService;
+
+        // Constants for business rules
+        private const decimal MIN_LOAN_AMOUNT = 10000;
+        private const decimal MAX_LOAN_AMOUNT = 1000000;
+        private const decimal MIN_INCOME_MULTIPLIER = 3;
+        private const int MIN_AGE = 20;
+        private const int MAX_AGE = 100;
+        private const decimal MAX_EMI_TO_INCOME_RATIO = 0.6m;
 
         public LoanApplicationService(
             ILoanApplicationRepository loanApplicationRepository,
@@ -31,6 +40,7 @@ namespace CredWiseAdmin.Services.Implementation
             ILoanRepaymentRepository loanRepaymentRepository,
             IMapper mapper,
             IFileStorageService fileStorageService,
+            IEmailService emailService,
             ILogger<LoanApplicationService> logger)
         {
             _loanApplicationRepository = loanApplicationRepository ?? throw new ArgumentNullException(nameof(loanApplicationRepository));
@@ -40,6 +50,7 @@ namespace CredWiseAdmin.Services.Implementation
             _loanRepaymentRepository = loanRepaymentRepository ?? throw new ArgumentNullException(nameof(loanRepaymentRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _fileStorageService = fileStorageService ?? throw new ArgumentNullException(nameof(fileStorageService));
+            _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
@@ -55,12 +66,43 @@ namespace CredWiseAdmin.Services.Implementation
                     throw new ArgumentNullException(nameof(applicationDto));
                 }
 
-                // Check if user exists
+                // Log the incoming DTO for debugging
+                _logger.LogDebug("Received loan application DTO: {@LoanApplicationDto}", applicationDto);
+
+                // Validate required fields
+                if (string.IsNullOrWhiteSpace(applicationDto.Gender))
+                    throw new ArgumentException("Gender is required");
+                if (string.IsNullOrWhiteSpace(applicationDto.Aadhaar))
+                    throw new ArgumentException("Aadhaar number is required");
+                if (string.IsNullOrWhiteSpace(applicationDto.Address))
+                    throw new ArgumentException("Address is required");
+                if (string.IsNullOrWhiteSpace(applicationDto.EmploymentType))
+                    throw new ArgumentException("Employment type is required");
+
+                // Validate field lengths
+                if (applicationDto.Gender.Length > 10)
+                    throw new ArgumentException("Gender must not exceed 10 characters");
+                if (applicationDto.Aadhaar.Length != 12)
+                    throw new ArgumentException("Aadhaar number must be exactly 12 digits");
+                if (applicationDto.Address.Length > 500)
+                    throw new ArgumentException("Address must not exceed 500 characters");
+                if (applicationDto.EmploymentType.Length > 50)
+                    throw new ArgumentException("Employment type must not exceed 50 characters");
+
+                // Validate user
                 var user = await _userRepository.GetByIdAsync(applicationDto.UserId);
                 if (user == null)
                 {
                     _logger.LogWarning("User not found with ID: {UserId}", applicationDto.UserId);
                     throw new KeyNotFoundException("User not found");
+                }
+
+                // Validate age
+                var age = DateTime.Today.Year - applicationDto.DOB.Year;
+                if (applicationDto.DOB.Date > DateTime.Today.AddYears(-age)) age--;
+                if (age < MIN_AGE || age > MAX_AGE)
+                {
+                    throw new InvalidOperationException($"Age must be between {MIN_AGE} and {MAX_AGE} years");
                 }
 
                 // Check if user already has an active loan
@@ -70,7 +112,14 @@ namespace CredWiseAdmin.Services.Implementation
                     throw new InvalidOperationException("User already has an active loan");
                 }
 
-                // Check if loan product exists
+                // Check if Aadhaar is already used
+                if (await _loanApplicationRepository.IsAadhaarUsed(applicationDto.Aadhaar))
+                {
+                    _logger.LogWarning("Aadhaar number {Aadhaar} is already used in another application", applicationDto.Aadhaar);
+                    throw new InvalidOperationException("Aadhaar number is already used in another application");
+                }
+
+                // Validate loan product
                 var loanProduct = await _loanProductRepository.GetByIdAsync(applicationDto.LoanProductId);
                 if (loanProduct == null)
                 {
@@ -78,33 +127,84 @@ namespace CredWiseAdmin.Services.Implementation
                     throw new KeyNotFoundException("Loan product not found");
                 }
 
-                // Validate loan amount (minimum ₹10,000)
-                if (applicationDto.RequestedAmount < 10000)
+                // Validate loan amount
+                if (applicationDto.RequestedAmount < MIN_LOAN_AMOUNT)
                 {
-                    _logger.LogWarning("Loan amount {Amount} is below minimum threshold", applicationDto.RequestedAmount);
-                    throw new ArgumentException("Minimum loan amount is ₹10,000");
+                    throw new ArgumentException($"Minimum loan amount is ₹{MIN_LOAN_AMOUNT:N0}");
+                }
+                if (applicationDto.RequestedAmount > MAX_LOAN_AMOUNT)
+                {
+                    throw new ArgumentException($"Maximum loan amount is ₹{MAX_LOAN_AMOUNT:N0}");
+                }
+                if (applicationDto.RequestedAmount > loanProduct.MaxLoanAmount)
+                {
+                    throw new ArgumentException($"Loan amount exceeds maximum limit for this product");
                 }
 
-                var application = _mapper.Map<LoanApplication>(applicationDto);
-                application.Status = "Pending";
-                application.DecisionDate = DateTime.UtcNow;
-                application.DecisionReason = "Application submitted";
-                application.IsActive = true;
-                application.CreatedAt = DateTime.UtcNow;
-                application.ModifiedAt = DateTime.UtcNow;
-                application.CreatedBy = "System";
-                application.ModifiedBy = "System";
+                // Validate income
+                if (applicationDto.Income < (applicationDto.RequestedAmount / MIN_INCOME_MULTIPLIER))
+                {
+                    throw new ArgumentException("Income is insufficient for the requested loan amount");
+                }
 
-                await _loanApplicationRepository.AddAsync(application);
-                _logger.LogInformation("Successfully created loan application {LoanApplicationId}", application.LoanApplicationId);
+                // Calculate EMI and validate against income
+                var emi = CalculateEMI(applicationDto.RequestedAmount, applicationDto.InterestRate, applicationDto.RequestedTenure);
+                if (emi > (applicationDto.Income * MAX_EMI_TO_INCOME_RATIO))
+                {
+                    throw new ArgumentException("EMI exceeds maximum allowed ratio of income");
+                }
 
-                return _mapper.Map<LoanApplicationResponseDto>(application);
+                try
+                {
+                    var application = _mapper.Map<LoanApplication>(applicationDto);
+                    _logger.LogDebug("Mapped loan application entity: {@LoanApplication}", application);
+
+                    application.Dob = DateOnly.FromDateTime(applicationDto.DOB.Date); // Convert DateTime to DateOnly
+                    application.Status = "Pending";
+                    application.DecisionDate = DateTime.UtcNow;
+                    application.DecisionReason = "Application submitted";
+                    application.IsActive = true;
+                    application.CreatedAt = DateTime.UtcNow;
+                    application.ModifiedAt = DateTime.UtcNow;
+                    application.CreatedBy = "Admin";
+                    application.ModifiedBy = "Admin";
+
+                    await _loanApplicationRepository.AddAsync(application);
+                    _logger.LogInformation("Successfully created loan application {LoanApplicationId}", application.LoanApplicationId);
+
+                    // Send email notification
+                    try
+                    {
+                        await _emailService.SendLoanApprovalEmailAsync(user.Email, application.LoanApplicationId);
+                    }
+                    catch (Exception emailEx)
+                    {
+                        _logger.LogError(emailEx, "Failed to send loan application email to {Email}", user.Email);
+                    }
+
+                    var responseDto = _mapper.Map<LoanApplicationResponseDto>(application);
+                    _logger.LogDebug("Mapped response DTO: {@LoanApplicationResponseDto}", responseDto);
+                    return responseDto;
+                }
+                catch (Exception mappingEx)
+                {
+                    _logger.LogError(mappingEx, "Error during mapping or saving loan application: {Message}", mappingEx.Message);
+                    throw;
+                }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error creating loan application for user {UserId}", applicationDto?.UserId);
+                _logger.LogError(ex, "Error creating loan application for user {UserId}: {Message}", applicationDto?.UserId, ex.Message);
                 throw;
             }
+        }
+
+        private decimal CalculateEMI(decimal principal, decimal interestRate, int tenure)
+        {
+            var monthlyRate = interestRate / 12 / 100;
+            var emi = principal * monthlyRate * (decimal)Math.Pow(1 + (double)monthlyRate, tenure) 
+                    / (decimal)(Math.Pow(1 + (double)monthlyRate, tenure) - 1);
+            return Math.Round(emi, 2);
         }
 
         public async Task<LoanApplicationResponseDto> GetLoanApplicationByIdAsync(int id)
@@ -216,8 +316,8 @@ namespace CredWiseAdmin.Services.Implementation
                     IsActive = true,
                     CreatedAt = DateTime.UtcNow,
                     ModifiedAt = DateTime.UtcNow,
-                    CreatedBy = "System",
-                    ModifiedBy = "System"
+                    CreatedBy = "Admin",
+                    ModifiedBy = "Admin"
                 };
 
                 await _bankStatementRepository.AddAsync(bankStatement);
@@ -248,7 +348,7 @@ namespace CredWiseAdmin.Services.Implementation
                 application.Status = "Processing";
                 application.DecisionReason = "Sent to decision application";
                 application.ModifiedAt = DateTime.UtcNow;
-                application.ModifiedBy = "System";
+                application.ModifiedBy = "Admin";
 
                 await _loanApplicationRepository.UpdateAsync(application);
                 _logger.LogInformation("Successfully sent loan application {LoanApplicationId} to decision app", loanApplicationId);
@@ -280,20 +380,42 @@ namespace CredWiseAdmin.Services.Implementation
                     throw new KeyNotFoundException("Loan application not found");
                 }
 
+                var user = await _userRepository.GetByIdAsync(application.UserId);
+                if (user == null)
+                {
+                    throw new KeyNotFoundException("User not found");
+                }
+
                 application.Status = status;
                 application.DecisionReason = reason ?? string.Empty;
                 application.DecisionDate = DateTime.UtcNow;
                 application.ModifiedAt = DateTime.UtcNow;
-                application.ModifiedBy = "System";
+                application.ModifiedBy = "Admim";
 
                 await _loanApplicationRepository.UpdateAsync(application);
-                _logger.LogInformation("Successfully updated status for loan application {LoanApplicationId}", loanApplicationId);
+
+                // Send appropriate email based on status
+                try
+                {
+                    if (status.Equals("Approved", StringComparison.OrdinalIgnoreCase))
+                    {
+                        await _emailService.SendLoanApprovalEmailAsync(user.Email, loanApplicationId);
+                    }
+                    else if (status.Equals("Rejected", StringComparison.OrdinalIgnoreCase))
+                    {
+                        await _emailService.SendLoanRejectionEmailAsync(user.Email, reason ?? "Application rejected");
+                    }
+                }
+                catch (Exception emailEx)
+                {
+                    _logger.LogError(emailEx, "Failed to send status update email to {Email}", user.Email);
+                }
 
                 return true;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error updating status for loan application {LoanApplicationId}", loanApplicationId);
+                _logger.LogError(ex, "Error updating loan application status {LoanApplicationId}", loanApplicationId);
                 throw;
             }
         }
@@ -321,7 +443,7 @@ namespace CredWiseAdmin.Services.Implementation
                 application.Status = "Completed";
                 application.IsActive = false;
                 application.ModifiedAt = DateTime.UtcNow;
-                application.ModifiedBy = "System";
+                application.ModifiedBy = "Admin";
 
                 await _loanApplicationRepository.UpdateAsync(application);
                 _logger.LogInformation("Successfully finalized repayment for loan application {LoanApplicationId}", loanApplicationId);

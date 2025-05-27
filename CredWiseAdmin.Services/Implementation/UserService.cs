@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using CredWiseAdmin.Core.Exceptions; // Assuming your custom exceptions are here
 using BCrypt.Net;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Http;
 
 namespace CredWiseAdmin.Services.Implementation
 {
@@ -19,17 +20,20 @@ namespace CredWiseAdmin.Services.Implementation
         private readonly IMapper _mapper;
         private readonly IEmailService _emailService;
         private readonly ILogger<UserService> _logger;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
         public UserService(
             IUserRepository userRepository,
             IMapper mapper,
             IEmailService emailService,
-            ILogger<UserService> logger)
+            ILogger<UserService> logger,
+            IHttpContextAccessor httpContextAccessor)
         {
             _userRepository = userRepository ?? throw new ArgumentNullException(nameof(userRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
             _emailService = emailService ?? throw new ArgumentNullException(nameof(emailService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public async Task<bool> AdminExists()
@@ -47,53 +51,93 @@ namespace CredWiseAdmin.Services.Implementation
 
         public async Task<UserResponseDto> RegisterUserAsync(RegisterUserDto registerDto)
         {
+            User userEntity = null;
             try
             {
-                _logger.LogInformation("Attempting to register new user: {Email}", registerDto.Email);
+                _logger.LogInformation("Registering user with email: {Email}", registerDto?.Email);
 
-                // Validate input
-                if (registerDto == null)
-                {
-                    throw new ArgumentNullException(nameof(registerDto));
-                }
+                // 1. Enhanced null check
+                if (registerDto == null) throw new ArgumentNullException(nameof(registerDto));
 
+                // 2. Normalize and validate email
+                registerDto.Email = registerDto.Email?.Trim().ToLower();
+                if (string.IsNullOrWhiteSpace(registerDto.Email))
+                    throw new System.ComponentModel.DataAnnotations.ValidationException("Email is required");
+
+                // 3. Set default role safely
+                registerDto.Role = string.IsNullOrWhiteSpace(registerDto.Role)
+                    ? "Customer"
+                    : registerDto.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase)
+                        ? "Admin"
+                        : "Customer";
+
+                // 4. Check for existing email
                 if (await _userRepository.EmailExists(registerDto.Email))
-                {
-                    _logger.LogWarning("Registration attempt with existing email: {Email}", registerDto.Email);
-                    throw new ConflictException("Email already exists");
-                }
+                    throw new ConflictException($"Email {registerDto.Email} already exists");
 
-                // Validate password strength
-                if (string.IsNullOrWhiteSpace(registerDto.Password) || registerDto.Password.Length < 8)
-                {
-                    throw new System.ComponentModel.DataAnnotations.ValidationException("Password must be at least 8 characters");
-                }
+                // 5. Map with null check
+                userEntity = _mapper.Map<User>(registerDto) ??
+                    throw new InvalidOperationException("User mapping failed");
 
-                var user = _mapper.Map<User>(registerDto);
-                user.Password = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
-                user.IsActive = true;
-                user.CreatedAt = DateTime.UtcNow;
-                user.ModifiedAt = DateTime.UtcNow;
-                user.CreatedBy = "System";
-                user.ModifiedBy = "System";
+                // 6. Password validation and hashing
+                if (string.IsNullOrWhiteSpace(registerDto.Password))
+                    throw new System.ComponentModel.DataAnnotations.ValidationException("Password is required");
 
-                await _userRepository.AddAsync(user);
+                userEntity.Password = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 
-                // Send welcome email (without password in production)
+                // 7. Set audit fields safely
+                var currentUser = _httpContextAccessor.HttpContext?.User?.Identity?.Name ?? "Admin";
+                userEntity.IsActive = true;
+                userEntity.CreatedAt = DateTime.UtcNow;
+                userEntity.ModifiedAt = DateTime.UtcNow;
+                userEntity.CreatedBy = currentUser;
+                userEntity.ModifiedBy = currentUser;
+
+                // 8. Save to database
+                await _userRepository.AddAsync(userEntity);
+                _logger.LogInformation("User created with ID: {UserId}", userEntity.UserId);
+
+                // 9. Safe email sending (truly non-blocking)
                 if (_emailService != null)
                 {
-                    await _emailService.SendUserRegistrationEmailAsync(user.Email, registerDto.Password);
+                    _ = Task.Run(async () =>
+                    {
+                        try
+                        {
+                            await _emailService.SendUserRegistrationEmailAsync(
+                                 userEntity.Email,
+                                 registerDto.Password
+                                );
+                        }
+                        catch (Exception emailEx)
+                        {
+                            _logger.LogError(emailEx, "Failed to send welcome email to {Email}",
+                                userEntity.Email);
+                        }
+                    }).ConfigureAwait(false);
                 }
 
-                _logger.LogInformation("Successfully registered new user: {Email} with role {Role}",
-                    user.Email, user.Role);
+                // 10. Get fresh copy from DB to ensure all fields are populated
+                var savedUser = await _userRepository.GetByIdAsync(userEntity.UserId);
+                if (savedUser == null)
+                    throw new InvalidOperationException("User not found after creation");
 
-                return _mapper.Map<UserResponseDto>(user);
+                // 11. Safe response mapping
+                var response = _mapper.Map<UserResponseDto>(savedUser) ??
+                    throw new InvalidOperationException("Response mapping failed");
+
+                return response;
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error registering user: {Email}", registerDto?.Email);
-                throw;
+                _logger.LogError(ex, "Registration failed. User state: {UserState}",
+                    userEntity != null ? "Created" : "Not Created");
+
+                // Convert to more specific exception if needed
+                if (ex is ArgumentNullException or System.ComponentModel.DataAnnotations.ValidationException or ConflictException)
+                    throw;
+
+                throw new ApplicationException("An error occurred during registration", ex);
             }
         }
 
@@ -176,7 +220,7 @@ namespace CredWiseAdmin.Services.Implementation
 
                 _mapper.Map(updateDto, user);
                 user.ModifiedAt = DateTime.UtcNow;
-                user.ModifiedBy = "System";
+                user.ModifiedBy = "Admin";
 
                 await _userRepository.UpdateAsync(user);
                 _logger.LogInformation("Successfully updated user: {UserId}", id);
@@ -199,6 +243,40 @@ namespace CredWiseAdmin.Services.Implementation
             {
                 _logger.LogError(ex, "Error counting admin users");
                 throw;
+            }
+        }
+        public async Task<bool> ValidateUserCredentialsAsync(string email, string password)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(password))
+                {
+                    _logger.LogWarning("Empty email or password provided");
+                    return false;
+                }
+
+                var normalizedEmail = email.Trim().ToLower();
+                var user = await _userRepository.GetByEmailAsync(normalizedEmail);
+
+                if (user == null || !(user.IsActive ?? false))
+                {
+                    _logger.LogWarning("User not found or inactive: {Email}", normalizedEmail);
+                    return false;
+                }
+
+                bool isValid = BCrypt.Net.BCrypt.Verify(password, user.Password);
+
+                if (!isValid)
+                {
+                    _logger.LogWarning("Invalid password for user: {Email}", normalizedEmail);
+                }
+
+                return isValid;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error validating credentials for {Email}", email);
+                return false;
             }
         }
     }

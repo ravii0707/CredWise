@@ -17,15 +17,18 @@ namespace CredWiseAdmin.API.Controllers
         private readonly IAuthService _authService;
         private readonly IUserService _userService;
         private readonly ILogger<AuthController> _logger;
+        private readonly IEmailService _emailService;
 
         public AuthController(
             IAuthService authService,
             IUserService userService,
-            ILogger<AuthController> logger)
+            ILogger<AuthController> logger,
+            IEmailService emailService)
         {
             _authService = authService;
             _userService = userService;
             _logger = logger;
+            _emailService = emailService;
         }
 
         [HttpPost("initial-admin-setup")]
@@ -74,8 +77,8 @@ namespace CredWiseAdmin.API.Controllers
         {
             try
             {
-                var token = await _authService.AuthenticateAsync(loginDto);
-                return Ok(new { Token = token });
+                var response = await _authService.AuthenticateAsync(loginDto);
+                return Ok(response);  // Now returns all user details with token
             }
             catch (UnauthorizedAccessException ex)
             {

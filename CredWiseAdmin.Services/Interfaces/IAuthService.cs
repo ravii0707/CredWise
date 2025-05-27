@@ -9,6 +9,6 @@ namespace CredWiseAdmin.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<string> AuthenticateAsync(AdminLoginDto loginDto);
+        Task<LoginResponseDto> AuthenticateAsync(AdminLoginDto loginDto);
     }
 }

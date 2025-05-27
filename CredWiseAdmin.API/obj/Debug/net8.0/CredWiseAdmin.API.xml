@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CredWiseAdmin.API</name>
+    </assembly>
+    <members>
+        <member name="M:CredWiseAdmin.API.Controllers.EmailsController.SendRegistrationEmail(CredWiseAdmin.API.Controllers.RegistrationEmailRequest)">
+            Send user registration email with credentials
+        </member>
+        <member name="M:CredWiseAdmin.API.Controllers.EmailsController.SendLoanApprovalEmail(CredWiseAdmin.API.Controllers.LoanEmailRequest)">
+            Send loan approval notification
+        </member>
+        <member name="M:CredWiseAdmin.API.Controllers.EmailsController.SendLoanRejectionEmail(CredWiseAdmin.API.Controllers.LoanRejectionRequest)">
+            Send loan rejection notification
+        </member>
+        <member name="M:CredWiseAdmin.API.Controllers.EmailsController.SendPaymentConfirmationEmail(CredWiseAdmin.API.Controllers.PaymentEmailRequest)">
+            Send payment confirmation
+        </member>
+    </members>
+</doc>

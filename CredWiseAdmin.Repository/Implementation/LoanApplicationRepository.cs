@@ -181,5 +181,11 @@ namespace CredWiseAdmin.Data.Repositories.Implementations
                 throw new RepositoryException("Failed to retrieve approved loan applications", ex);
             }
         }
+
+        public async Task<bool> IsAadhaarUsed(string aadhaar)
+        {
+            return await _context.LoanApplications
+                .AnyAsync(l => l.Aadhaar == aadhaar);
+        }
     }
 }

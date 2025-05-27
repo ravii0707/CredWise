@@ -14,9 +14,13 @@ namespace CredWiseAdmin.Services.Mappings
         public AutoMapperProfile()
         {
             // User mappings
-            CreateMap<RegisterUserDto, User>();
-            CreateMap<User, UserResponseDto>();
+            CreateMap<RegisterUserDto, User>()
+             .ForMember(dest => dest.Email, opt => opt.MapFrom(src => src.Email.ToLower()));
+            CreateMap<User, UserResponseDto>()
+     .ForMember(dest => dest.FullName, opt => opt.MapFrom(src => $"{src.FirstName} {src.LastName}"));
             CreateMap<UpdateUserDto, User>();
+
+   
 
             // Loan product mappings
             CreateMap<LoanProduct, LoanProductResponseDto>();
@@ -25,8 +29,10 @@ namespace CredWiseAdmin.Services.Mappings
             CreateMap<GoldLoanDetail, GoldLoanDetailDto>();
 
             // Loan application mappings
-            CreateMap<LoanApplicationDto, LoanApplication>();
-            CreateMap<LoanApplication, LoanApplicationResponseDto>();
+            CreateMap<LoanApplicationDto, LoanApplication>()
+                .ForMember(dest => dest.Dob, opt => opt.MapFrom(src => DateOnly.FromDateTime(src.DOB.Date)));
+            CreateMap<LoanApplication, LoanApplicationResponseDto>()
+                .ForMember(dest => dest.DOB, opt => opt.MapFrom(src => src.Dob.ToDateTime(TimeOnly.MinValue)));
 
             // Loan bank statement mappings
             CreateMap<LoanBankStatement, BankStatementResponseDto>();
