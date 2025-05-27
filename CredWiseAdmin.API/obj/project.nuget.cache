@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "mhXp15RnPAU=",
+  "dgSpecHash": "gnWI7hACeFY=",
   "success": true,
-  "projectFilePath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
+  "projectFilePath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.API\\CredWiseAdmin.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
     "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
