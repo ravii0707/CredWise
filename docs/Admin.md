@@ -2,7 +2,7 @@
 
 ## Overview
 
-The CredWise Admin module is a .NET Core-based application that manages loan and FD product configurations, application processing, and integration with external systems. The application follows clean architecture principles and implements best practices for enterprise applications.
+The CredWise Admin module is a .NET Core-based application that manages loan and FD product configurations, application processing, user management, and email notifications. The application follows clean architecture principles and implements best practices for enterprise applications.
 
 ## Project Structure
 
@@ -14,6 +14,8 @@ The solution is organized into the following projects:
    - API configuration and middleware
    - Dependency injection setup
    - API documentation (Swagger)
+   - User management endpoints
+   - Email notification endpoints
 
 2. **CredWiseAdmin.Core**
 
@@ -21,6 +23,8 @@ The solution is organized into the following projects:
    - DTOs (Data Transfer Objects)
    - Interfaces for repositories and services
    - Enums and constants
+   - User-related models
+   - Email-related models
 
 3. **CredWiseAdmin.Services**
 
@@ -30,42 +34,53 @@ The solution is organized into the following projects:
    - Validation logic
    - Email notification system
    - Email templates
+   - User management services
 
 4. **CredWiseAdmin.Repository**
    - Database context
    - Repository implementations
    - Entity configurations
    - Database migrations
+   - User data access
 
 ## Key Features
 
-1. **Loan Type Management**
+1. **User Management**
 
-   - Create, read, update, and delete loan types
-   - Configure loan parameters (amount, interest rate, term)
-   - Track loan type status and history
+   - User registration and authentication
+   - Role-based access control (Admin/Customer)
+   - User profile management
+   - Password management
+   - User status tracking
 
-2. **FD Type Management**
-
-   - Manage fixed deposit product configurations
-   - Set interest rates and terms
-   - Track FD type status
-
-3. **Application Processing**
-
-   - Handle loan applications
-   - Track application status
-   - Process application workflows
-
-4. **Email Notification System**
+2. **Email Notification System**
 
    - User registration notifications
    - Loan approval notifications
    - Loan rejection notifications
    - Payment confirmation notifications
    - HTML email templates with responsive design
+   - Secure email handling
 
-5. **Integration**
+3. **Loan Type Management**
+
+   - Create, read, update, and delete loan types
+   - Configure loan parameters (amount, interest rate, term)
+   - Track loan type status and history
+
+4. **FD Type Management**
+
+   - Manage fixed deposit product configurations
+   - Set interest rates and terms
+   - Track FD type status
+
+5. **Application Processing**
+
+   - Handle loan applications
+   - Track application status
+   - Process application workflows
+
+6. **Integration**
    - Authentication and authorization
    - External system integration
    - Logging and monitoring
@@ -78,12 +93,15 @@ The core layer contains the domain entities and interfaces that define the busin
 
 #### Key Entities:
 
+- `User`: Represents a system user
 - `LoanType`: Represents a loan product configuration
 - `FDType`: Represents a fixed deposit product configuration
 - `LoanApplication`: Represents a loan application
 
 #### Key Interfaces:
 
+- `IUserRepository`: Repository interface for user management
+- `IUserService`: Service interface for user operations
 - `ILoanTypeRepository`: Repository interface for loan types
 - `ILoanTypeService`: Service interface for loan type operations
 - `IUnitOfWork`: Unit of work pattern interface
@@ -98,6 +116,7 @@ The repository layer handles data access and persistence.
 - `ApplicationDbContext`: Entity Framework Core context
 - `GenericRepository<T>`: Base repository implementation
 - `UnitOfWork`: Manages transactions and repository instances
+- `UserRepository`: Handles user data access
 
 ### 3. Service Layer (CredWiseAdmin.Services)
 
@@ -105,10 +124,19 @@ The service layer implements business logic and orchestrates operations.
 
 #### Key Services:
 
+- `UserService`: Manages user operations
 - `LoanTypeService`: Manages loan type operations
 - `FDTypeService`: Manages FD type operations
 - `LoanApplicationService`: Handles loan application processing
 - `EmailService`: Handles email notifications
+
+#### User Management:
+
+- User registration with validation
+- Password hashing using BCrypt
+- Role-based authorization
+- User status management
+- Profile updates
 
 #### Email Notification System:
 
@@ -119,12 +147,14 @@ The email notification system is implemented in the `EmailService` class and inc
    - Sends welcome email with login credentials
    - Includes login URL and password
    - Styled with professional HTML template
+   - Security recommendations
 
 2. **Loan Approval Email**
 
    - Notifies users of approved loan applications
    - Includes loan application ID
    - Provides next steps and support contact
+   - Clear call-to-action buttons
 
 3. **Loan Rejection Email**
 
@@ -132,12 +162,14 @@ The email notification system is implemented in the `EmailService` class and inc
    - Includes rejection reason
    - Provides support contact information
    - Offers guidance for future applications
+   - Professional and empathetic tone
 
 4. **Payment Confirmation Email**
    - Confirms successful payment
    - Includes transaction ID and date
    - Provides transaction details
    - Includes record-keeping reminder
+   - Clear transaction summary
 
 #### Email Templates:
 
@@ -149,6 +181,8 @@ All email templates are stored in the `EmailTemplates` directory and include:
 - Color-coded status indicators
 - Security notices
 - Footer with important information
+- Mobile-friendly layout
+- Accessible design
 
 ### 4. API Layer (CredWiseAdmin.API)
 
@@ -156,10 +190,27 @@ The API layer exposes endpoints for client applications.
 
 #### Key Components:
 
+- `UsersController`: Handles user management operations
 - `LoanTypesController`: Handles loan type operations
 - `ErrorHandlingMiddleware`: Global error handling
 - `ServiceCollectionExtensions`: Dependency injection setup
 - `EmailsController`: Handles email-related operations
+
+#### User Management Endpoints:
+
+- POST /api/admin/users/register
+- POST /api/admin/users/login
+- GET /api/admin/users/{id}
+- PUT /api/admin/users/{id}
+- PUT /api/admin/users/{id}/deactivate
+
+#### Email Testing Endpoints:
+
+- POST /api/admin/users/test-send-credentials
+- POST /api/admin/emails/send-registration
+- POST /api/admin/emails/send-loan-approval
+- POST /api/admin/emails/send-loan-rejection
+- POST /api/admin/emails/send-payment-confirmation
 
 ## Best Practices
 
@@ -168,18 +219,21 @@ The API layer exposes endpoints for client applications.
    - Global exception handling middleware
    - Custom exception types
    - Structured error responses
+   - Detailed error logging
 
 2. **Validation**
 
    - FluentValidation for DTOs
    - Custom validation attributes
    - Service-level validation
+   - Input sanitization
 
 3. **Logging**
 
    - Structured logging with Serilog
    - Correlation IDs for request tracking
    - Appropriate log levels
+   - Audit logging for user actions
 
 4. **Security**
 
@@ -187,6 +241,8 @@ The API layer exposes endpoints for client applications.
    - Role-based authorization
    - Secure configuration management
    - Secure email handling
+   - Password hashing with BCrypt
+   - Input validation and sanitization
 
 5. **Performance**
 
@@ -194,11 +250,13 @@ The API layer exposes endpoints for client applications.
    - Caching implementation
    - Optimized database queries
    - Non-blocking email sending
+   - Efficient user data access
 
 6. **Testing**
    - Unit tests for services
    - Integration tests for repositories
    - API functional tests
+   - Email template testing
 
 ## Configuration
 
@@ -236,10 +294,11 @@ The API layer exposes endpoints for client applications.
 
 ```json
 {
-  "Auth": {
-    "ProviderDllPath": "./Libs/AuthProvider.dll",
-    "ApiKey": "your-api-key",
-    "BaseUrl": "https://auth-provider.example.com"
+  "Jwt": {
+    "Secret": "your-secret-key",
+    "Issuer": "credwise.com",
+    "Audience": "credwise-users",
+    "ExpiryInMinutes": 60
   }
 }
 ```
@@ -249,9 +308,11 @@ The API layer exposes endpoints for client applications.
 ```json
 {
   "Logging": {
-    "ProviderDllPath": "./Libs/Logger.dll",
-    "LogLevel": "Information",
-    "LogPath": "./logs"
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
   }
 }
 ```
@@ -263,12 +324,14 @@ The API layer exposes endpoints for client applications.
    - Follow clean architecture principles
    - Use dependency injection
    - Implement proper separation of concerns
+   - Maintain consistent file structure
 
 2. **Naming Conventions**
 
    - Use PascalCase for public members
    - Use camelCase for private members
    - Use meaningful names
+   - Follow C# naming conventions
 
 3. **Documentation**
 
@@ -285,11 +348,59 @@ The API layer exposes endpoints for client applications.
    - Maintain consistent branding
    - Ensure accessibility
    - Test across email clients
+   - Follow email best practices
 
 5. **Version Control**
    - Use feature branches
    - Write meaningful commit messages
    - Review code before merging
+   - Keep commits focused and atomic
+
+## Security Considerations
+
+### Authentication
+
+- JWT-based authentication
+- Secure password storage with BCrypt
+- Token refresh mechanism
+- Session management
+
+### Authorization
+
+- Role-based access control
+- Resource-level permissions
+- API endpoint security
+- User role validation
+
+### Data Protection
+
+- Encrypted sensitive data
+- Secure configuration storage
+- Audit logging
+- Data backup encryption
+- Email security
+
+## Next Steps
+
+1. **Planned Features**
+
+   - Enhanced user profile management
+   - Additional email templates
+   - Advanced reporting
+   - Audit trail system
+
+2. **Improvements**
+
+   - Performance optimization
+   - Enhanced error handling
+   - Additional security measures
+   - Extended testing coverage
+
+3. **Documentation**
+   - API documentation updates
+   - User guides
+   - Deployment guides
+   - Troubleshooting guides
 
 ## Deployment
 

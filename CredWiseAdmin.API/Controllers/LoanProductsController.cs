@@ -49,7 +49,7 @@ namespace CredWiseAdmin.API.Controllers
             {
                 return BadRequest(ex.Message);
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return StatusCode(500, "An error occurred while creating the loan product.");
             }

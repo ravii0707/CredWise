@@ -129,6 +129,14 @@ builder.Services.AddSwaggerGen(c =>
 });
 // =============================================
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("*",
+        policy => policy.AllowAnyOrigin()
+                        .AllowAnyHeader()
+                        .AllowAnyMethod());
+});
+
 var app = builder.Build();
 
 // =============================================
@@ -164,6 +172,7 @@ app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 
 // Enable CORS
+app.UseCors("*");
 app.UseCors(x => x
     .AllowAnyOrigin()
     .AllowAnyMethod()

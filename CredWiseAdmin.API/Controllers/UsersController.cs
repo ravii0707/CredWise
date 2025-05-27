@@ -3,7 +3,6 @@ using CredWiseAdmin.Repository.Interfaces;
 using CredWiseAdmin.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using CredWiseAdmin.Services.Interfaces;
 
 namespace CredWiseAdmin.API.Controllers
 {
@@ -44,6 +43,12 @@ namespace CredWiseAdmin.API.Controllers
                     });
                 }
 
+                // Set default role to Customer if not specified
+                if (string.IsNullOrWhiteSpace(registerDto.Role))
+                {
+                    registerDto.Role = "Customer";
+                }
+
                 var user = await _userService.RegisterUserAsync(registerDto);
 
                 // Send email with credentials
@@ -58,10 +63,20 @@ namespace CredWiseAdmin.API.Controllers
                 }
 
                 _logger.LogInformation("User registered successfully with ID: {UserId}", user.UserId);
-                return CreatedAtAction(nameof(GetUserByIdAsync), new { id = user.UserId }, new
+                return Ok(new
                 {
                     Success = true,
-                    Data = user
+                    Message = "User registered successfully",
+                    Data = new
+                    {
+                        UserId = user.UserId,
+                        FirstName = user.FirstName,
+                        LastName = user.LastName,
+                        Email = user.Email,
+                        PhoneNumber = user.PhoneNumber,
+                        Role = user.Role,
+                        IsActive = user.IsActive
+                    }
                 });
             }
             catch (ConflictException ex)
@@ -74,13 +89,19 @@ namespace CredWiseAdmin.API.Controllers
                 _logger.LogWarning(ex, "Validation failed during user registration");
                 return BadRequest(new { Success = false, Message = ex.Message });
             }
+            catch (RepositoryException ex)
+            {
+                _logger.LogError(ex, "Database error during user registration");
+                return StatusCode(500, new { Success = false, Message = "Database error occurred", Details = ex.Message });
+            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "Unexpected error during user registration");
                 return StatusCode(500, new
                 {
                     Success = false,
-                    Message = "An internal server error occurred"
+                    Message = "An internal server error occurred",
+                    Details = ex.Message
                 });
             }
         }
@@ -296,8 +317,8 @@ namespace CredWiseAdmin.API.Controllers
 
         public class TestEmailRequest
         {
-            public string Email { get; set; }
-            public string Password { get; set; }
+            public string? Email { get; set; }
+            public string? Password { get; set; }
         }
 
     }
