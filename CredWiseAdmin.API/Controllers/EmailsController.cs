@@ -84,25 +84,25 @@ namespace CredWiseAdmin.API.Controllers
 
     public class RegistrationEmailRequest
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
     }
 
     public class LoanEmailRequest
     {
-        public string Email { get; set; }
+        public string? Email { get; set; }
         public int LoanApplicationId { get; set; }
     }
 
     public class LoanRejectionRequest
     {
-        public string Email { get; set; }
-        public string Reason { get; set; }
+        public string? Email { get; set; }
+        public string? Reason { get; set; }
     }
 
     public class PaymentEmailRequest
     {
-        public string Email { get; set; }
+        public string? Email { get; set; }
         public int TransactionId { get; set; }
     }
 }

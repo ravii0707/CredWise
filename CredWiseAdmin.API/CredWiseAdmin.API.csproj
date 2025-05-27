@@ -14,15 +14,26 @@
 		<PackageReference Include="AutoMapper" Version="14.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="8.0.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.5">
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0">
 		  <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		  <PrivateAssets>all</PrivateAssets>
 		</PackageReference>
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+		<PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.4.0" />
+		<PackageReference Include="Microsoft.IdentityModel.Tokens" Version="7.4.0" />
 	</ItemGroup>
 	<ItemGroup>
-		<ProjectReference Include="..\CredWiseAdmin.Repository\CredWiseAdmin.Repository.csproj" />
+		<ProjectReference Include="..\CredWiseAdmin.Core\CredWiseAdmin.Core.csproj" />
 		<ProjectReference Include="..\CredWiseAdmin.Services\CredWiseAdmin.Services.csproj" />
+		<ProjectReference Include="..\CredWiseAdmin.Repository\CredWiseAdmin.Repository.csproj" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="Authentication.Service">
+	    <HintPath>..\Externaldll\Authentication.Service.dll</HintPath>
+	  </Reference>
+	  <Reference Include="Loggers.service">
+	    <HintPath>..\Externaldll\Loggers.service.dll</HintPath>
+	  </Reference>
 	</ItemGroup>
 
 </Project>

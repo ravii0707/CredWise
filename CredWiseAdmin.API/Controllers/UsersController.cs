@@ -3,7 +3,6 @@ using CredWiseAdmin.Repository.Interfaces;
 using CredWiseAdmin.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using CredWiseAdmin.Services.Interfaces;
 
 namespace CredWiseAdmin.API.Controllers
 {
@@ -296,8 +295,8 @@ namespace CredWiseAdmin.API.Controllers
 
         public class TestEmailRequest
         {
-            public string Email { get; set; }
-            public string Password { get; set; }
+            public string? Email { get; set; }
+            public string? Password { get; set; }
         }
 
     }
