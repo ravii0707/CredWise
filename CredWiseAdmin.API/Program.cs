@@ -13,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using CredWiseAdmin.Data.Repositories.Implementations;
 using CredWiseAdmin.Data.Repositories.Interfaces;
 using CredWiseAdmin.Middleware;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -82,33 +83,49 @@ builder.Services.AddAuthentication(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "CredWise Admin API",
+    c.SwaggerDoc("v1", new OpenApiInfo 
+    { 
+        Title = "CredWise Admin API", 
         Version = "v1",
-        Description = "API for managing CredWise administration"
+        Description = "API for CredWise administration including email services"
     });
 
-    // Add JWT Authentication support
-    var securityScheme = new OpenApiSecurityScheme
+    // Add JWT Bearer authentication to Swagger
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
-        Name = "JWT Authentication",
-        Description = "Enter JWT Bearer token",
+        Description = "JWT Authorization header using the Bearer scheme. Example: \"Bearer {token}\"",
+        Name = "Authorization",
         In = ParameterLocation.Header,
-        Type = SecuritySchemeType.Http,
-        Scheme = "bearer",
-        BearerFormat = "JWT",
-        Reference = new OpenApiReference
-        {
-            Id = JwtBearerDefaults.AuthenticationScheme,
-            Type = ReferenceType.SecurityScheme
-        }
-    };
-    c.AddSecurityDefinition(securityScheme.Reference.Id, securityScheme);
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer"
+    });
+
     c.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
-        { securityScheme, Array.Empty<string>() }
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
     });
+
+    // Include XML comments if available
+    try
+    {
+        var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+        var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+        if (File.Exists(xmlPath))
+        {
+            c.IncludeXmlComments(xmlPath);
+        }
+    }
+    catch { /* Ignored */ }
 });
 // =============================================
 

@@ -3,6 +3,7 @@ using CredWiseAdmin.Repository.Interfaces;
 using CredWiseAdmin.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using CredWiseAdmin.Services.Interfaces;
 
 namespace CredWiseAdmin.API.Controllers
 {
@@ -14,12 +15,14 @@ namespace CredWiseAdmin.API.Controllers
         private readonly IUserService _userService;
         private readonly ILogger<UsersController> _logger;
         private readonly IUserRepository _userRepository;
+        private readonly IEmailService _emailService;
 
-        public UsersController(IUserService userService, ILogger<UsersController> logger,IUserRepository userRepository)
+        public UsersController(IUserService userService, ILogger<UsersController> logger,IUserRepository userRepository, IEmailService emailService)
         {
             _userService = userService ?? throw new ArgumentNullException(nameof(userService));
             _logger = logger ?? throw new ArgumentNullException(nameof(logger));
             _userRepository = userRepository;
+            _emailService = emailService;
         }
 
         [HttpPost("register")]
@@ -42,6 +45,17 @@ namespace CredWiseAdmin.API.Controllers
                 }
 
                 var user = await _userService.RegisterUserAsync(registerDto);
+
+                // Send email with credentials
+                try
+                {
+                    await _emailService.SendUserRegistrationEmailAsync(user.Email, registerDto.Password);
+                    _logger.LogInformation("Registration email sent to {Email}", user.Email);
+                }
+                catch (Exception emailEx)
+                {
+                    _logger.LogError(emailEx, "Failed to send registration email to {Email}", user.Email);
+                }
 
                 _logger.LogInformation("User registered successfully with ID: {UserId}", user.UserId);
                 return CreatedAtAction(nameof(GetUserByIdAsync), new { id = user.UserId }, new
@@ -264,6 +278,26 @@ namespace CredWiseAdmin.API.Controllers
                     Error = ex.Message
                 });
             }
+        }
+        [HttpPost("test-send-credentials")]
+        [AllowAnonymous] // Temporarily allow unauthenticated access for testing
+        public async Task<IActionResult> TestSendCredentials([FromBody] TestEmailRequest request)
+        {
+            try
+            {
+                await _emailService.SendUserRegistrationEmailAsync(request.Email, request.Password);
+                return Ok(new { Success = true, Message = "Test email sent" });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Success = false, ex.Message });
+            }
+        }
+
+        public class TestEmailRequest
+        {
+            public string Email { get; set; }
+            public string Password { get; set; }
         }
 
     }

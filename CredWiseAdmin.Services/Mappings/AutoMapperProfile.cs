@@ -29,8 +29,10 @@ namespace CredWiseAdmin.Services.Mappings
             CreateMap<GoldLoanDetail, GoldLoanDetailDto>();
 
             // Loan application mappings
-            CreateMap<LoanApplicationDto, LoanApplication>();
-            CreateMap<LoanApplication, LoanApplicationResponseDto>();
+            CreateMap<LoanApplicationDto, LoanApplication>()
+                .ForMember(dest => dest.Dob, opt => opt.MapFrom(src => DateOnly.FromDateTime(src.DOB.Date)));
+            CreateMap<LoanApplication, LoanApplicationResponseDto>()
+                .ForMember(dest => dest.DOB, opt => opt.MapFrom(src => src.Dob.ToDateTime(TimeOnly.MinValue)));
 
             // Loan bank statement mappings
             CreateMap<LoanBankStatement, BankStatementResponseDto>();

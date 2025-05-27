@@ -115,6 +115,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "CredWiseAdmin.API.Controllers.UsersController",
+    "Method": "TestSendCredentials",
+    "RelativePath": "api/admin/users/test-send-credentials",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CredWiseAdmin.API.Controllers.UsersController\u002BTestEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "CredWiseAdmin.API.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -141,6 +157,70 @@
       {
         "Name": "registerDto",
         "Type": "RegisterUserDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.EmailsController",
+    "Method": "SendLoanApprovalEmail",
+    "RelativePath": "api/Emails/send-loan-approval",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CredWiseAdmin.API.Controllers.LoanEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.EmailsController",
+    "Method": "SendLoanRejectionEmail",
+    "RelativePath": "api/Emails/send-loan-rejection",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CredWiseAdmin.API.Controllers.LoanRejectionRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.EmailsController",
+    "Method": "SendPaymentConfirmationEmail",
+    "RelativePath": "api/Emails/send-payment-confirmation",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CredWiseAdmin.API.Controllers.PaymentEmailRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.EmailsController",
+    "Method": "SendRegistrationEmail",
+    "RelativePath": "api/Emails/send-registration",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "CredWiseAdmin.API.Controllers.RegistrationEmailRequest",
         "IsRequired": true
       }
     ],
@@ -504,6 +584,32 @@
     "ReturnTypes": [
       {
         "Type": "System.Collections.Generic.IEnumerable\u00601[[CredWiseAdmin.Core.DTOs.LoanProductResponseDto, CredWiseAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.LoanProductsController",
+    "Method": "CreateLoanProduct",
+    "RelativePath": "api/LoanProducts",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "loanProductDto",
+        "Type": "CredWiseAdmin.Core.DTOs.LoanProductDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "CredWiseAdmin.Core.DTOs.LoanProductResponseDto",
         "MediaTypes": [
           "text/plain",
           "application/json",

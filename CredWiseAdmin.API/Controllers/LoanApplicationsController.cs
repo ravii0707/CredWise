@@ -11,17 +11,41 @@ namespace CredWiseAdmin.API.Controllers
     public class LoanApplicationsController : ControllerBase
     {
         private readonly ILoanApplicationService _loanApplicationService;
+        private readonly ILogger<LoanApplicationsController> _logger;
 
-        public LoanApplicationsController(ILoanApplicationService loanApplicationService)
+        public LoanApplicationsController(ILoanApplicationService loanApplicationService, ILogger<LoanApplicationsController> logger)
         {
             _loanApplicationService = loanApplicationService;
+            _logger = logger;
         }
 
+        [Authorize(Roles ="Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateLoanApplication([FromBody] LoanApplicationDto applicationDto)
         {
-            var application = await _loanApplicationService.CreateLoanApplicationAsync(applicationDto);
-            return CreatedAtAction(nameof(GetLoanApplicationById), new { id = application.LoanApplicationId }, application);
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var application = await _loanApplicationService.CreateLoanApplicationAsync(applicationDto);
+                return CreatedAtAction(nameof(GetLoanApplicationById), new { id = application.LoanApplicationId }, application);
+            }
+            catch (Exception ex)
+            {
+                // Log the full error
+                _logger.LogError(ex, "Error creating loan application");
+
+                // Return a more detailed error message
+                return StatusCode(500, new
+                {
+                    Message = "An error occurred while creating the loan application",
+                    DetailedMessage = ex.Message,
+                    StackTrace = ex.StackTrace
+                });
+            }
         }
 
         [HttpGet("{id}")]

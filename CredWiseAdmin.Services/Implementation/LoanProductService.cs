@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CredWiseAdmin.Core.DTOs;
+using CredWiseAdmin.Core.Entities;
 using CredWiseAdmin.Core.Exceptions;
 using CredWiseAdmin.Repository.Interfaces;
 using CredWiseAdmin.Services.Interfaces;
@@ -53,6 +54,71 @@ namespace CredWiseAdmin.Services.Implementation
             {
                 // Log exception here if you have logging
                 throw new Exception($"An error occurred while retrieving loan product with ID {id}.", ex);
+            }
+        }
+
+        public async Task<LoanProductResponseDto> CreateLoanProductAsync(LoanProductDto loanProductDto)
+        {
+            try
+            {
+                if (loanProductDto == null)
+                {
+                    throw new BadRequestException("Loan product data cannot be null");
+                }
+
+                // Map DTO to entity
+                var loanProduct = _mapper.Map<LoanProduct>(loanProductDto);
+
+                // Set common properties
+                loanProduct.IsActive = true;
+                loanProduct.CreatedAt = DateTime.UtcNow;
+                loanProduct.ModifiedAt = DateTime.UtcNow;
+                loanProduct.CreatedBy = "Admin"; // Replace with actual user from auth context
+                loanProduct.ModifiedBy = "Admin";
+
+                // Create specific loan detail based on type
+                switch (loanProductDto.LoanType?.ToUpper())
+                {
+                    case "PERSONAL":
+                        loanProduct.PersonalLoanDetail = new PersonalLoanDetail
+                        {
+                            IsActive = true,
+                            CreatedAt = DateTime.UtcNow,
+                            ModifiedAt = DateTime.UtcNow,
+                            CreatedBy = "Admin",
+                            ModifiedBy = "Admin"
+                        };
+                        break;
+                    case "HOME":
+                        loanProduct.HomeLoanDetail = new HomeLoanDetail
+                        {
+                            IsActive = true,
+                            CreatedAt = DateTime.UtcNow,
+                            ModifiedAt = DateTime.UtcNow,
+                            CreatedBy = "Admin",
+                            ModifiedBy = "Admin"
+                        };
+                        break;
+                    case "GOLD":
+                        loanProduct.GoldLoanDetail = new GoldLoanDetail
+                        {
+                            IsActive = true,
+                            CreatedAt = DateTime.UtcNow,
+                            ModifiedAt = DateTime.UtcNow,
+                            CreatedBy = "Admin",
+                            ModifiedBy = "Admin"
+                        };
+                        break;
+                    default:
+                        throw new BadRequestException("Invalid loan type specified");
+                }
+
+                await _loanProductRepository.AddAsync(loanProduct);
+                return _mapper.Map<LoanProductResponseDto>(loanProduct);
+            }
+            catch (Exception ex) when (ex is not BadRequestException and not NotFoundException)
+            {
+                throw new Exception("An error occurred while creating the loan product.", ex);
             }
         }
     }

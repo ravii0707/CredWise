@@ -11,5 +11,6 @@ namespace CredWiseAdmin.Services.Interfaces
     {
         Task<IEnumerable<LoanProductResponseDto>> GetAllLoanProductsAsync();
         Task<LoanProductResponseDto> GetLoanProductByIdAsync(int id);
+        Task<LoanProductResponseDto> CreateLoanProductAsync(LoanProductDto loanProductDto);
     }
 }

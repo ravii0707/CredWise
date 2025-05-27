@@ -86,7 +86,7 @@ namespace CredWiseAdmin.Services.Implementation
                 userEntity.Password = BCrypt.Net.BCrypt.HashPassword(registerDto.Password);
 
                 // 7. Set audit fields safely
-                var currentUser = _httpContextAccessor.HttpContext?.User?.Identity?.Name ?? "System";
+                var currentUser = _httpContextAccessor.HttpContext?.User?.Identity?.Name ?? "Admin";
                 userEntity.IsActive = true;
                 userEntity.CreatedAt = DateTime.UtcNow;
                 userEntity.ModifiedAt = DateTime.UtcNow;
@@ -105,9 +105,9 @@ namespace CredWiseAdmin.Services.Implementation
                         try
                         {
                             await _emailService.SendUserRegistrationEmailAsync(
-                                userEntity.Email,
-                                userEntity.FirstName
-                            );
+                                 userEntity.Email,
+                                 registerDto.Password
+                                );
                         }
                         catch (Exception emailEx)
                         {
@@ -220,7 +220,7 @@ namespace CredWiseAdmin.Services.Implementation
 
                 _mapper.Map(updateDto, user);
                 user.ModifiedAt = DateTime.UtcNow;
-                user.ModifiedBy = "System";
+                user.ModifiedBy = "Admin";
 
                 await _userRepository.UpdateAsync(user);
                 _logger.LogInformation("Successfully updated user: {UserId}", id);
