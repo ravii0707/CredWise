@@ -10,21 +10,42 @@ namespace CredWiseAdmin.API.Controllers
     public class EmailsController : ControllerBase
     {
         private readonly IEmailService _emailService;
+        private readonly ILogger<EmailsController> _logger;
 
-        public EmailsController(IEmailService emailService)
+        public EmailsController(IEmailService emailService,ILogger<EmailsController> logger)
+
         {
             _emailService = emailService;
+            _logger = logger;
         }
 
-   
+
         /// Send user registration email with credentials
-   
-        [HttpPost("send-registration")]
         [Authorize(Roles = "Admin")]
+        [HttpPost("send-registration")]
+     
         public async Task<IActionResult> SendRegistrationEmail([FromBody] RegistrationEmailRequest request)
         {
-            await _emailService.SendUserRegistrationEmailAsync(request.Email, request.Password);
-            return Ok(new { Message = "Registration email sent successfully" });
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                await _emailService.SendUserRegistrationEmailAsync(request.Email, request.Password);
+                return Ok(new { Success = true, Message = "Registration email sent successfully" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Failed to send registration email");
+                return StatusCode(500, new
+                {
+                    Success = false,
+                    Message = "Failed to send email",
+                    Error = ex.Message
+                });
+            }
         }
 
   
