@@ -67,10 +67,15 @@ namespace CredWiseAdmin.Repository.Implementation
 
         public async Task<IEnumerable<User>> GetAllAsync()
         {
+
             try
             {
+                //return await _context.Users
+                //    .Where(u => u.IsActive ?? false)
+                //    .ToListAsync();
                 return await _context.Users
                     .Where(u => u.IsActive ?? false)
+                    .Include(u => u.Role) // Include related roles
                     .ToListAsync();
             }
             catch (Exception ex)

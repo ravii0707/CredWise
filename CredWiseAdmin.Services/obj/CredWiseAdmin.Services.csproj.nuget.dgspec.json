@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {}
+    "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {}
   },
   "projects": {
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
+    "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
+        "projectUniqueName": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
         "projectName": "CredWiseAdmin.Core",
-        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
-        "packagesPath": "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\",
-        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\obj\\",
+        "projectPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj",
+        "packagesPath": "C:\\Users\\Venkat Vadlakonda\\.nuget\\packages\\",
+        "outputPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Raviteja Kundaram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Venkat Vadlakonda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -75,24 +75,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
+    "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
+        "projectUniqueName": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
         "projectName": "CredWiseAdmin.Repository",
-        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
-        "packagesPath": "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\",
-        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\obj\\",
+        "projectPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj",
+        "packagesPath": "C:\\Users\\Venkat Vadlakonda\\.nuget\\packages\\",
+        "outputPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Raviteja Kundaram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Venkat Vadlakonda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -107,8 +107,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
+              "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
+                "projectPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
               }
             }
           }
@@ -158,24 +158,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {
+    "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+        "projectUniqueName": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
         "projectName": "CredWiseAdmin.Services",
-        "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
-        "packagesPath": "C:\\Users\\Raviteja Kundaram\\.nuget\\packages\\",
-        "outputPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Services\\obj\\",
+        "projectPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Services\\CredWiseAdmin.Services.csproj",
+        "packagesPath": "C:\\Users\\Venkat Vadlakonda\\.nuget\\packages\\",
+        "outputPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Raviteja Kundaram\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Venkat Vadlakonda\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -190,11 +190,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
+              "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj": {
+                "projectPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Core\\CredWiseAdmin.Core.csproj"
               },
-              "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
-                "projectPath": "C:\\Learning\\CSharp\\Training\\CredWiseAdmin\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj"
+              "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj": {
+                "projectPath": "C:\\Applications\\CredWise\\BackEnd\\CredWise\\CredWiseAdmin.Repository\\CredWiseAdmin.Repository.csproj"
               }
             }
           }
@@ -252,7 +252,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.204/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

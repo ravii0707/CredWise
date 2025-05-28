@@ -236,6 +236,7 @@ namespace CredWiseAdmin.Services.Implementation
                 var users = await _userRepository.GetAllAsync();
                 _logger.LogInformation("Retrieved {Count} users", users.Count());
                 return _mapper.Map<IEnumerable<UserResponseDto>>(users);
+
             }
             catch (Exception ex)
             {
