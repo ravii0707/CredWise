@@ -1,69 +1,42 @@
-using AutoMapper;
-using CredWiseAdmin.Core.DTOs;
+using System;
+using System.Threading.Tasks;
 using CredWiseAdmin.Core.Entities;
 using CredWiseAdmin.Core.Exceptions;
 using CredWiseAdmin.Repository.Interfaces;
-using CredWiseAdmin.Services.Interfaces;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace CredWiseAdmin.Services.Implementation
+namespace CredWiseAdmin.Services
 {
-    public class LoanEnquiryService : ILoanEnquiryService
+    public class LoanEnquiryService
     {
-        private readonly ILoanEnquiryRepository _loanEnquiryRepository;
-        private readonly IMapper _mapper;
         private readonly ILogger<LoanEnquiryService> _logger;
+        private readonly ILoanApplicationRepository _repository;
 
-        public LoanEnquiryService(
-            ILoanEnquiryRepository loanEnquiryRepository,
-            IMapper mapper,
-            ILogger<LoanEnquiryService> logger)
+        public LoanEnquiryService(ILogger<LoanEnquiryService> logger, ILoanApplicationRepository repository)
         {
-            _loanEnquiryRepository = loanEnquiryRepository ?? throw new ArgumentNullException(nameof(loanEnquiryRepository));
-            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
-            _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            _logger = logger;
+            _repository = repository;
         }
 
-        public async Task<IEnumerable<LoanEnquiryResponseDto>> GetAllEnquiriesAsync()
+        public async Task<bool> SendToDecisionAppAsync(int id)
         {
-            _logger.LogInformation("Fetching all loan enquiries");
-
             try
             {
-                var enquiries = await _loanEnquiryRepository.GetAllAsync();
-                return _mapper.Map<IEnumerable<LoanEnquiryResponseDto>>(enquiries ?? Enumerable.Empty<LoanEnquiry>());
+                var application = await _repository.GetByIdAsync(id);
+                if (application == null)
+                    throw new NotFoundException($"Loan application with ID {id} not found.");
+
+                if (application.Status != "Initial Review")
+                    throw new BadRequestException("Loan application is not in a valid state to send to decision app.");
+
+                // Simulate sending to decision app
+                // ...
+
+                return true;
             }
-            catch (Exception ex)
+            catch (NotFoundException)
             {
-                _logger.LogError(ex, "Error fetching all loan enquiries");
-                throw new ServiceException(
-                    "Unable to retrieve the list of loan enquiries. Please try again later or contact support if the problem persists.",
-                    ex);
-            }
-        }
-
-        public async Task<LoanEnquiryResponseDto> GetEnquiryByIdAsync(int id)
-        {
-            _logger.LogInformation("Fetching loan enquiry with ID {EnquiryId}", id);
-
-            try
-            {
-                if (id <= 0)
-                {
-                    throw new BadRequestException("Invalid enquiry ID. Please provide a valid positive number.");
-                }
-
-                var enquiry = await _loanEnquiryRepository.GetByIdAsync(id);
-                if (enquiry == null)
-                {
-                    return null; // Return null instead of throwing exception to match controller's behavior
-                }
-
-                return _mapper.Map<LoanEnquiryResponseDto>(enquiry);
+                throw;
             }
             catch (BadRequestException)
             {
@@ -71,10 +44,8 @@ namespace CredWiseAdmin.Services.Implementation
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error fetching loan enquiry with ID {EnquiryId}", id);
-                throw new ServiceException(
-                    $"Unable to retrieve the loan enquiry details. Please try again later or contact support if the problem persists.",
-                    ex);
+                _logger.LogError(ex, "Error sending loan application to decision app");
+                throw new ServiceException("An unexpected error occurred while sending to decision app.", ex);
             }
         }
     }
