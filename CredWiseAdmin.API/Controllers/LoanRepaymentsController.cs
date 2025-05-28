@@ -1,4 +1,5 @@
 ﻿using CredWiseAdmin.Core.DTOs;
+using CredWiseAdmin.Core.Exceptions;
 using CredWiseAdmin.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -56,6 +57,29 @@ namespace CredWiseAdmin.API.Controllers
         {
             var repayments = await _loanRepaymentService.GetOverdueRepaymentsAsync();
             return Ok(repayments);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<IEnumerable<LoanRepaymentDto>>> GetAllRepayments()
+        {
+            try
+            {
+                var repayments = await _loanRepaymentService.GetAllRepaymentsAsync();
+                return Ok(repayments);
+            }
+            catch (NotFoundException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
+            catch (ServiceException ex)
+            {
+                return StatusCode(500, new { message = ex.Message });
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
+            }
         }
     }
 }

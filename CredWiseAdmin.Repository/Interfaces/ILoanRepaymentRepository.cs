@@ -12,5 +12,6 @@ namespace CredWiseAdmin.Repository.Interfaces
         Task UpdateAsync(LoanRepaymentSchedule repayment);
         Task<IEnumerable<LoanRepaymentSchedule>> GetPendingRepaymentsAsync(int userId);
         Task<IEnumerable<LoanRepaymentSchedule>> GetOverdueRepaymentsAsync();
+        Task<IEnumerable<LoanRepaymentSchedule>> GetAllRepaymentsAsync();
     }
 }

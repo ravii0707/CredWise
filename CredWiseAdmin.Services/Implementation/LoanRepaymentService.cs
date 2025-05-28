@@ -7,6 +7,7 @@ using CredWiseAdmin.Core.Exceptions; // Assuming your exceptions are here
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace CredWiseAdmin.Services.Implementation
 {
@@ -104,6 +105,27 @@ namespace CredWiseAdmin.Services.Implementation
         {
             var repayments = await _loanRepaymentRepository.GetOverdueRepaymentsAsync();
             return _mapper.Map<IEnumerable<LoanRepaymentDto>>(repayments);
+        }
+
+        public async Task<IEnumerable<LoanRepaymentDto>> GetAllRepaymentsAsync()
+        {
+            try
+            {
+                var repayments = await _loanRepaymentRepository.GetAllRepaymentsAsync();
+                if (!repayments.Any())
+                {
+                    throw new NotFoundException("No loan repayments found in the system.");
+                }
+                return _mapper.Map<IEnumerable<LoanRepaymentDto>>(repayments);
+            }
+            catch (CustomException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new ServiceException("Failed to retrieve loan repayments. Please try again later.", ex);
+            }
         }
     }
 }

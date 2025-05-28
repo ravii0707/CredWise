@@ -14,5 +14,6 @@ namespace CredWiseAdmin.Services.Interfaces
         Task<bool> ApplyPenaltyAsync(int repaymentId);
         Task<IEnumerable<LoanRepaymentDto>> GetPendingRepaymentsAsync(int userId);
         Task<IEnumerable<LoanRepaymentDto>> GetOverdueRepaymentsAsync();
+        Task<IEnumerable<LoanRepaymentDto>> GetAllRepaymentsAsync();
     }
 }

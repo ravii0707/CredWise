@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CredWiseAdmin.Utils")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+685199ad45ff2c569f2e1d6efb4b2bd78a0d54ba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcced2fcc05018ee9b88a018e0de82b79696445f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CredWiseAdmin.Utils")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CredWiseAdmin.Utils")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

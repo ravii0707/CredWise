@@ -647,6 +647,26 @@
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.LoanRepaymentsController",
+    "Method": "GetAllRepayments",
+    "RelativePath": "api/LoanRepayments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CredWiseAdmin.Core.DTOs.LoanRepaymentDto, CredWiseAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.LoanRepaymentsController",
     "Method": "ApplyPenalty",
     "RelativePath": "api/LoanRepayments/{repaymentId}/penalty",
     "HttpMethod": "POST",

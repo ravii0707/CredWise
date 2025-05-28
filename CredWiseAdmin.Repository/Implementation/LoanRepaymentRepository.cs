@@ -121,5 +121,20 @@ namespace CredWiseAdmin.Repository.Implementation
                 throw new RepositoryException("Error fetching overdue loan repayments.", ex);
             }
         }
+
+        public async Task<IEnumerable<LoanRepaymentSchedule>> GetAllRepaymentsAsync()
+        {
+            try
+            {
+                return await _context.LoanRepaymentSchedules
+                    .Include(r => r.LoanApplication)
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new RepositoryException("Unable to fetch loan repayments. Please try again later.", ex);
+            }
+        }
     }
 }
