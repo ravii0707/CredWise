@@ -36,6 +36,7 @@ builder.Services.AddScoped<ILoanBankStatementRepository, LoanBankStatementReposi
 builder.Services.AddScoped<ILoanRepaymentRepository, LoanRepaymentRepository>();
 builder.Services.AddScoped<IPaymentTransactionRepository, PaymentTransactionRepository>();
 builder.Services.AddScoped<IFDRepository, FDRepository>();
+builder.Services.AddScoped<ILoanEnquiryRepository, LoanEnquiryRepository>();
 
 // Register services
 builder.Services.AddScoped<IUserService, UserService>();
@@ -45,6 +46,7 @@ builder.Services.AddScoped<ILoanApplicationService, LoanApplicationService>();
 builder.Services.AddScoped<ILoanRepaymentService, LoanRepaymentService>();
 builder.Services.AddScoped<IFDService, FDService>();
 builder.Services.AddScoped<IEmailService, EmailService>();
+builder.Services.AddScoped<ILoanEnquiryService, LoanEnquiryService>();
 builder.Services.AddScoped<IFileStorageService>(provider =>
     new FileStorageService(builder.Configuration["FileStorage:BasePath"]));
 builder.Services.AddHttpContextAccessor();

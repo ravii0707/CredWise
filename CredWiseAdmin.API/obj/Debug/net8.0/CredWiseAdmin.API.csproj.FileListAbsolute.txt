@@ -197,7 +197,6 @@ C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\n
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\net8.0\EmailTemplates\UserRegistration.html
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\net8.0\appsettings.Development.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\net8.0\appsettings.json
-C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.staticwebassets.runtime.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.staticwebassets.endpoints.json
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.exe
 C:\Learning\CSharp\Training\CredWiseAdmin\CredWise\CredWiseAdmin.API\bin\Debug\net8.0\CredWiseAdmin.API.deps.json
