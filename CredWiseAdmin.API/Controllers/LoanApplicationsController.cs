@@ -111,12 +111,25 @@ namespace CredWiseAdmin.API.Controllers
         [HttpPut("{id}/update-status")]
         public async Task<IActionResult> UpdateLoanStatus(int id, [FromBody] UpdateLoanStatusDto statusDto)
         {
-            var result = await _loanApplicationService.UpdateLoanStatusAsync(id, statusDto.Status, statusDto.Reason);
-            if (!result)
+            if (!ModelState.IsValid)
             {
-                return BadRequest();
+                return BadRequest(new { status = false, message = "Invalid input.", errors = ModelState.Values.SelectMany(v => v.Errors).Select(e => e.ErrorMessage) });
             }
-            return NoContent();
+
+            try
+            {
+                var result = await _loanApplicationService.UpdateLoanStatusAsync(id, statusDto.Status, statusDto.Reason);
+                if (!result)
+                {
+                    return BadRequest(new { status = false, message = "Failed to update loan status. Please check the status value and application existence." });
+                }
+                return Ok(new { status = true, message = "Status updated successfully." });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error updating loan application status for id {Id}", id);
+                return StatusCode(500, new { status = false, message = "An unexpected error occurred. Please contact support." });
+            }
         }
 
         [Authorize(Roles = "Admin")]

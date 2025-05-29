@@ -37,6 +37,8 @@ namespace CredWiseAdmin.Services.Implementation
                     );
                 }
 
+                _logger.LogInformation("Service received {Count} enquiries", enquiries.Count());
+
                 return ApiResponse<IEnumerable<LoanEnquiry>>.CreateSuccess(
                     enquiries,
                     "Enquiries retrieved successfully"
@@ -46,7 +48,7 @@ namespace CredWiseAdmin.Services.Implementation
             {
                 _logger.LogError(ex, "Error occurred while retrieving enquiries");
                 return ApiResponse<IEnumerable<LoanEnquiry>>.CreateError(
-                    "An error occurred while retrieving enquiries"
+                    $"An error occurred while retrieving enquiries: {ex.Message}"
                 );
             }
         }

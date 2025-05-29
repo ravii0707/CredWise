@@ -33,6 +33,16 @@ namespace CredWiseAdmin.Services.Implementation
         private const int MAX_AGE = 100;
         private const decimal MAX_EMI_TO_INCOME_RATIO = 0.6m;
 
+        private static readonly HashSet<string> AllowedStatuses = new(StringComparer.OrdinalIgnoreCase)
+        {
+            "Approved",
+            "Rejected",
+            "Initial Review",
+            "Pending",
+            "Processing",
+            "Completed"
+        };
+
         public LoanApplicationService(
             ILoanApplicationRepository loanApplicationRepository,
             ILoanProductRepository loanProductRepository,
@@ -393,27 +403,35 @@ namespace CredWiseAdmin.Services.Implementation
             {
                 if (string.IsNullOrWhiteSpace(status))
                 {
-                    throw new ArgumentException("Status cannot be empty", nameof(status));
+                    _logger.LogWarning("Status cannot be empty");
+                    return false;
+                }
+                if (!AllowedStatuses.Contains(status))
+                {
+                    _logger.LogWarning("Invalid status value: {Status}", status);
+                    return false;
                 }
 
                 var application = await _loanApplicationRepository.GetByIdAsync(loanApplicationId);
                 if (application == null)
                 {
                     _logger.LogWarning("Loan application not found with ID: {LoanApplicationId}", loanApplicationId);
-                    throw new KeyNotFoundException("Loan application not found");
+                    return false;
                 }
 
                 var user = await _userRepository.GetByIdAsync(application.UserId);
                 if (user == null)
                 {
-                    throw new KeyNotFoundException("User not found");
+                    _logger.LogWarning("User not found for loan application {LoanApplicationId}", loanApplicationId);
+                    return false;
                 }
 
+                // Only update allowed fields
                 application.Status = status;
                 application.DecisionReason = reason ?? string.Empty;
                 application.DecisionDate = DateTime.UtcNow;
                 application.ModifiedAt = DateTime.UtcNow;
-                application.ModifiedBy = "Admim";
+                application.ModifiedBy = "Admin";
 
                 await _loanApplicationRepository.UpdateAsync(application);
 

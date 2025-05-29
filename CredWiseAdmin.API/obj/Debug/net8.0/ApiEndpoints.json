@@ -405,7 +405,7 @@
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.LoanApplicationsController",
     "Method": "GenerateRepaymentPlan",
-    "RelativePath": "api/LoanApplications/{id}/generate-repayment-plan",
+    "RelativePath": "api/LoanApplications/{id}/generate-EMI-plan",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

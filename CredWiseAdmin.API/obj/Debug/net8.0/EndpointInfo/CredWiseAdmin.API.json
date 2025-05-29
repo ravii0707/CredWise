@@ -793,7 +793,7 @@
         }
       }
     },
-    "/api/LoanApplications/{id}/generate-repayment-plan": {
+    "/api/LoanApplications/{id}/generate-EMI-plan": {
       "post": {
         "tags": [
           "LoanApplications"
@@ -853,27 +853,6 @@
                 }
               }
             }
-          }
-        }
-      },
-      "get": {
-        "tags": [
-          "LoanApplications"
-        ],
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }
@@ -927,6 +906,29 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/LoanApplications/{id}/generate-repayment-plan": {
+      "get": {
+        "tags": [
+          "LoanApplications"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }

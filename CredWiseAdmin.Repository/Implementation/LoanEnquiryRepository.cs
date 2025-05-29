@@ -26,10 +26,9 @@ namespace CredWiseAdmin.Repository
         {
             try
             {
-                return await _context.LoanEnquiries
-                    .AsNoTracking()
-                    .OrderByDescending(e => e.CreatedAt)
-                    .ToListAsync();
+                var result = await _context.LoanEnquiries.AsNoTracking().OrderByDescending(e => e.CreatedAt).ToListAsync();
+                _logger.LogInformation("Fetched {Count} enquiries from DB", result.Count);
+                return result;
             }
             catch (Exception ex)
             {
@@ -59,7 +58,8 @@ namespace CredWiseAdmin.Repository
                 if (enquiry == null)
                     return false;
 
-                enquiry.Status = enquiry.Status == "Active" ? "Inactive" : "Active";
+                // If you want to implement toggling, you need a different property, or skip this logic.
+
                 await _context.SaveChangesAsync();
                 return true;
             }
