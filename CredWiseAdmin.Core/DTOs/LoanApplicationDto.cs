@@ -43,7 +43,7 @@ namespace CredWiseAdmin.Core.DTOs
         [Required]
         public decimal InterestRate { get; set; }
 
-        public string? Purpose { get; set; }
+        //public string? Purpose { get; set; }
     }
 
     public class LoanApplicationResponseDto : LoanApplicationDto

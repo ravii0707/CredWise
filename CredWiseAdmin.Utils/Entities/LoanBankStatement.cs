@@ -23,12 +23,12 @@ public partial class LoanBankStatement
     public string Status { get; set; } = null!;
 
     [StringLength(255)]
-    public string RejectionReason { get; set; } = null!;
+    public string? RejectionReason { get; set; }
 
-    public int VerifiedBy { get; set; }
+    public int? VerifiedBy { get; set; }
 
     [Column(TypeName = "datetime")]
-    public DateTime VerifiedAt { get; set; }
+    public DateTime? VerifiedAt { get; set; }
 
     public bool IsActive { get; set; }
 
@@ -39,10 +39,10 @@ public partial class LoanBankStatement
     public string CreatedBy { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
 
     [ForeignKey("LoanApplicationId")]
     [InverseProperty("LoanBankStatements")]
@@ -50,5 +50,5 @@ public partial class LoanBankStatement
 
     [ForeignKey("VerifiedBy")]
     [InverseProperty("LoanBankStatements")]
-    public virtual User VerifiedByNavigation { get; set; } = null!;
+    public virtual User? VerifiedByNavigation { get; set; }
 }

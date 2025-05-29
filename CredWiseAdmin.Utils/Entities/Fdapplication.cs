@@ -30,10 +30,10 @@ public partial class Fdapplication
     public string Status { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime MaturityDate { get; set; }
+    public DateTime? MaturityDate { get; set; }
 
     [Column(TypeName = "decimal(18, 2)")]
-    public decimal MaturityAmount { get; set; }
+    public decimal? MaturityAmount { get; set; }
 
     public bool IsActive { get; set; }
 
@@ -44,10 +44,10 @@ public partial class Fdapplication
     public string CreatedBy { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
 
     [InverseProperty("Fdapplication")]
     public virtual ICollection<Fdtransaction> Fdtransactions { get; set; } = new List<Fdtransaction>();

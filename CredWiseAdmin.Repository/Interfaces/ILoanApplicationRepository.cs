@@ -18,5 +18,6 @@ namespace CredWiseAdmin.Repository.Interfaces
         Task<IEnumerable<LoanApplication>> GetPendingApplicationsAsync();
         Task<IEnumerable<LoanApplication>> GetApprovedApplicationsAsync();
         Task<bool> IsAadhaarUsed(string aadhaar);
+        Task<IEnumerable<LoanApplication>> GetAllLoanApplicationsAsync();
     }
 }

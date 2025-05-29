@@ -31,10 +31,10 @@ public partial class HomeLoanDetail
     public string CreatedBy { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
 
     [ForeignKey("LoanProductId")]
     [InverseProperty("HomeLoanDetail")]

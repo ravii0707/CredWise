@@ -8,14 +8,8 @@ namespace CredWiseAdmin.Core.DTOs
 {
     public class RepaymentPlanResponseDto
     {
-        public int LoanApplicationId { get; set; }
-        public decimal PrincipalAmount { get; set; }
-        public decimal InterestRate { get; set; }
-        public int TenureMonths { get; set; }
-        public decimal MonthlyEmi { get; set; }
-        public decimal TotalInterest { get; set; }
-        public decimal TotalRepayment { get; set; }
-        public DateTime StartDate { get; set; }
-        public List<LoanRepaymentDto> Repayments { get; set; }
+        public bool Success { get; set; }
+        public string Message { get; set; }
+        public IEnumerable<RepaymentPlanDTO> Data { get; set; }
     }
 }

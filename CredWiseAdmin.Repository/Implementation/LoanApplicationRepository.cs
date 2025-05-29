@@ -187,5 +187,24 @@ namespace CredWiseAdmin.Data.Repositories.Implementations
             return await _context.LoanApplications
                 .AnyAsync(l => l.Aadhaar == aadhaar);
         }
+
+        public async Task<IEnumerable<LoanApplication>> GetAllLoanApplicationsAsync()
+        {
+            try
+            {
+                return await _context.LoanApplications
+                    .Include(la => la.User)
+                    .Include(la => la.LoanProduct)
+                    .Include(la => la.LoanBankStatements)
+                    .Include(la => la.LoanRepaymentSchedules)
+                    .Include(la => la.PaymentTransactions)
+                    .AsNoTracking()
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                throw new RepositoryException("Unable to fetch loan applications. Please try again later.", ex);
+            }
+        }
     }
 }

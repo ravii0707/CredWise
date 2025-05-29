@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using CredWiseAdmin.Core.DTOs;
 using CredWiseAdmin.Core.Entities;
+using CredWiseAdmin.Core.Exceptions;
 using CredWiseAdmin.Data.Repositories.Interfaces;
 using CredWiseAdmin.Repository.Interfaces;
 using CredWiseAdmin.Services.Interfaces;
@@ -220,7 +221,29 @@ namespace CredWiseAdmin.Services.Implementation
                     throw new KeyNotFoundException("Loan application not found");
                 }
 
-                return _mapper.Map<LoanApplicationResponseDto>(application);
+                // Include loan product and its details
+                var loanProduct = await _loanProductRepository.GetByIdAsync(application.LoanProductId);
+                
+                var responseDto = _mapper.Map<LoanApplicationResponseDto>(application);
+                
+                // Set loan type
+                responseDto.LoanType = loanProduct.LoanType;
+                
+                // Set interest rate based on loan type
+                switch (loanProduct.LoanType.ToUpper())
+                {
+                    case "PERSONAL":
+                        responseDto.InterestRate = loanProduct.PersonalLoanDetail?.InterestRate ?? 0;
+                        break;
+                    case "HOME":
+                        responseDto.InterestRate = loanProduct.HomeLoanDetail?.InterestRate ?? 0;
+                        break;
+                    case "GOLD":
+                        responseDto.InterestRate = loanProduct.GoldLoanDetail?.InterestRate ?? 0;
+                        break;
+                }
+                
+                return responseDto;
             }
             catch (Exception ex)
             {
@@ -459,77 +482,152 @@ namespace CredWiseAdmin.Services.Implementation
 
         public async Task<RepaymentPlanResponseDto> GenerateRepaymentPlanAsync(EmiPlanDto emiPlanDto)
         {
-            _logger.LogInformation("Generating repayment plan for loan {LoanId}", emiPlanDto.LoanId);
-
             try
             {
-                if (emiPlanDto == null)
+                var loanApplication = await _loanApplicationRepository.GetByIdAsync(emiPlanDto.LoanId);
+                
+                if (loanApplication == null)
                 {
-                    throw new ArgumentNullException(nameof(emiPlanDto));
-                }
-
-                var application = await _loanApplicationRepository.GetByIdAsync(emiPlanDto.LoanId);
-                if (application == null)
-                {
-                    _logger.LogWarning("Loan application not found with ID: {LoanId}", emiPlanDto.LoanId);
-                    throw new KeyNotFoundException("Loan application not found");
-                }
-
-                if (application.Status != "Approved")
-                {
-                    _logger.LogWarning("Loan {LoanId} must be approved before generating repayment plan", emiPlanDto.LoanId);
-                    throw new InvalidOperationException("Loan must be approved before generating repayment plan");
-                }
-
-                // Validate tenure
-                if (emiPlanDto.TenureInMonths != 6 && emiPlanDto.TenureInMonths != 12 && emiPlanDto.TenureInMonths != 24)
-                {
-                    _logger.LogWarning("Invalid tenure {Tenure} months for loan {LoanId}", emiPlanDto.TenureInMonths, emiPlanDto.LoanId);
-                    throw new ArgumentException("EMI plan must be 6, 12, or 24 months");
-                }
-
-                // Calculate EMI using standard formula: P × r × (1 + r)^n / ((1 + r)^n - 1)
-                decimal principal = application.RequestedAmount;
-                decimal monthlyInterestRate = (decimal)emiPlanDto.InterestRate / 100 / 12;
-                int numberOfPayments = emiPlanDto.TenureInMonths;
-
-                decimal emi = principal * monthlyInterestRate * (decimal)Math.Pow(1 + (double)monthlyInterestRate, numberOfPayments) /
-                            (decimal)(Math.Pow(1 + (double)monthlyInterestRate, numberOfPayments) - 1);
-
-                var repaymentPlan = new RepaymentPlanResponseDto
-                {
-                    LoanApplicationId = application.LoanApplicationId,
-                    PrincipalAmount = principal,
-                    InterestRate = (decimal)emiPlanDto.InterestRate,
-                    TenureMonths = numberOfPayments,
-                    MonthlyEmi = emi,
-                    TotalInterest = emi * numberOfPayments - principal,
-                    TotalRepayment = emi * numberOfPayments,
-                    StartDate = DateTime.UtcNow,
-                    Repayments = new List<LoanRepaymentDto>()
-                };
-
-                // Generate repayment schedule
-                for (int i = 1; i <= numberOfPayments; i++)
-                {
-                    repaymentPlan.Repayments.Add(new LoanRepaymentDto
+                    return new RepaymentPlanResponseDto
                     {
-                        InstallmentNumber = i,
-                        DueDate = DateTime.UtcNow.AddMonths(i),
-                        PrincipalAmount = principal / numberOfPayments,
-                        InterestAmount = emi - (principal / numberOfPayments),
-                        TotalAmount = emi,
-                        Status = "Pending"
-                    });
+                        Success = true,
+                        Message = "There are no loan EMI payments",
+                        Data = new List<RepaymentPlanDTO>()
+                    };
                 }
 
-                _logger.LogInformation("Successfully generated repayment plan for loan {LoanId}", emiPlanDto.LoanId);
-                return repaymentPlan;
+                var repaymentPlan = CalculateRepaymentPlan(
+                    emiPlanDto.LoanAmount,
+                    emiPlanDto.InterestRate,
+                    emiPlanDto.TenureInMonths,
+                    emiPlanDto.StartDate
+                );
+
+                if (!repaymentPlan.Any())
+                {
+                    return new RepaymentPlanResponseDto
+                    {
+                        Success = true,
+                        Message = "There are no loan EMI payments",
+                        Data = new List<RepaymentPlanDTO>()
+                    };
+                }
+
+                return new RepaymentPlanResponseDto
+                {
+                    Success = true,
+                    Message = "Repayment plan generated successfully",
+                    Data = repaymentPlan
+                };
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error generating repayment plan for loan {LoanId}", emiPlanDto?.LoanId);
+                _logger.LogError(ex, "Error occurred while generating repayment plan for loan application ID: {Id}", emiPlanDto.LoanId);
+                return new RepaymentPlanResponseDto
+                {
+                    Success = false,
+                    Message = "An error occurred while generating the repayment plan",
+                    Data = new List<RepaymentPlanDTO>()
+                };
+            }
+        }
+
+        private IEnumerable<RepaymentPlanDTO> CalculateRepaymentPlan(
+            decimal loanAmount,
+            decimal interestRate,
+            int tenureInMonths,
+            DateTime startDate)
+        {
+            var monthlyInterestRate = interestRate / 12 / 100; // Convert annual rate to monthly decimal
+            var monthlyPayment = CalculateMonthlyPayment(loanAmount, monthlyInterestRate, tenureInMonths);
+            var remainingBalance = loanAmount;
+            var repaymentPlan = new List<RepaymentPlanDTO>();
+
+            for (int i = 1; i <= tenureInMonths; i++)
+            {
+                var interestAmount = remainingBalance * monthlyInterestRate;
+                var principalAmount = monthlyPayment - interestAmount;
+                remainingBalance -= principalAmount;
+
+                repaymentPlan.Add(new RepaymentPlanDTO
+                {
+                    InstallmentNumber = i,
+                    DueDate = startDate.AddMonths(i),
+                    PrincipalAmount = Math.Round(principalAmount, 2),
+                    InterestAmount = Math.Round(interestAmount, 2),
+                    TotalAmount = Math.Round(monthlyPayment, 2),
+                    RemainingBalance = Math.Round(remainingBalance, 2)
+                });
+            }
+
+            return repaymentPlan;
+        }
+
+        private decimal CalculateMonthlyPayment(decimal principal, decimal monthlyInterestRate, int numberOfPayments)
+        {
+            if (monthlyInterestRate == 0)
+                return principal / numberOfPayments;
+
+            var factor = (decimal)Math.Pow(1 + (double)monthlyInterestRate, numberOfPayments);
+            return principal * monthlyInterestRate * factor / (factor - 1);
+        }
+
+        public async Task<IEnumerable<LoanApplicationResponseDto>> GetAllLoanApplicationsAsync()
+        {
+            try
+            {
+                _logger.LogInformation("Fetching all loan applications");
+
+                var applications = await _loanApplicationRepository.GetAllLoanApplicationsAsync();
+                
+                if (!applications.Any())
+                {
+                    _logger.LogInformation("No loan applications found in the system");
+                    throw new NotFoundException("No loan applications found in the system.");
+                }
+
+                var responseDtos = new List<LoanApplicationResponseDto>();
+                
+                foreach (var application in applications)
+                {
+                    var responseDto = _mapper.Map<LoanApplicationResponseDto>(application);
+                    
+                    // Get loan product details
+                    var loanProduct = await _loanProductRepository.GetByIdAsync(application.LoanProductId);
+                    if (loanProduct != null)
+                    {
+                        // Set loan type
+                        responseDto.LoanType = loanProduct.LoanType;
+                        
+                        // Set interest rate based on loan type
+                        switch (loanProduct.LoanType.ToUpper())
+                        {
+                            case "PERSONAL":
+                                responseDto.InterestRate = loanProduct.PersonalLoanDetail?.InterestRate ?? 0;
+                                break;
+                            case "HOME":
+                                responseDto.InterestRate = loanProduct.HomeLoanDetail?.InterestRate ?? 0;
+                                break;
+                            case "GOLD":
+                                responseDto.InterestRate = loanProduct.GoldLoanDetail?.InterestRate ?? 0;
+                                break;
+                        }
+                    }
+                    
+                    responseDtos.Add(responseDto);
+                }
+                
+                _logger.LogInformation("Successfully retrieved {Count} loan applications", applications.Count());
+                return responseDtos;
+            }
+            catch (CustomException)
+            {
                 throw;
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error fetching all loan applications");
+                throw new ServiceException("Failed to retrieve loan applications. Please try again later.", ex);
             }
         }
     }

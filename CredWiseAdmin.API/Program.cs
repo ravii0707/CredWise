@@ -14,6 +14,7 @@ using CredWiseAdmin.Data.Repositories.Implementations;
 using CredWiseAdmin.Data.Repositories.Interfaces;
 using CredWiseAdmin.Middleware;
 using System.Reflection;
+using CredWiseAdmin.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -36,6 +37,8 @@ builder.Services.AddScoped<ILoanBankStatementRepository, LoanBankStatementReposi
 builder.Services.AddScoped<ILoanRepaymentRepository, LoanRepaymentRepository>();
 builder.Services.AddScoped<IPaymentTransactionRepository, PaymentTransactionRepository>();
 builder.Services.AddScoped<IFDRepository, FDRepository>();
+builder.Services.AddScoped<ILoanEnquiryRepository, LoanEnquiryRepository>();
+
 
 // Register services
 builder.Services.AddScoped<IUserService, UserService>();
@@ -48,6 +51,8 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 builder.Services.AddScoped<IFileStorageService>(provider =>
     new FileStorageService(builder.Configuration["FileStorage:BasePath"]));
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddScoped<ILoanEnquiryService, LoanEnquiryService>();
+
 
 // Configure AutoMapper
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));

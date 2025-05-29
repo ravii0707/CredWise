@@ -27,10 +27,16 @@ public partial class LoanProductDocument
     public string CreatedBy { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
+
+    public int? LoanApplicationId { get; set; }
+
+    [ForeignKey("LoanApplicationId")]
+    [InverseProperty("LoanProductDocuments")]
+    public virtual LoanApplication? LoanApplication { get; set; }
 
     [ForeignKey("LoanProductId")]
     [InverseProperty("LoanProductDocuments")]

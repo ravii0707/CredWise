@@ -51,6 +51,9 @@ namespace CredWiseAdmin.Services.Mappings
 
             // Loan enquiry mappings
             CreateMap<LoanEnquiryDto, LoanEnquiry>();
+
+            // Enquiry mappings
+         
         }
     }
 }

@@ -13,14 +13,14 @@ public partial class DecisionAppLog
 
     public int LoanApplicationId { get; set; }
 
-    public string DecisionInput { get; set; } = null!;
+    public string? DecisionInput { get; set; }
 
-    public string DecisionOutput { get; set; } = null!;
+    public string? DecisionOutput { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime? ProcessedAt { get; set; }
 
-    public int ProcessingTime { get; set; }
+    public int? ProcessingTime { get; set; }
 
     public bool IsActive { get; set; }
 
@@ -31,10 +31,10 @@ public partial class DecisionAppLog
     public string CreatedBy { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
 
     [ForeignKey("LoanApplicationId")]
     [InverseProperty("DecisionAppLogs")]

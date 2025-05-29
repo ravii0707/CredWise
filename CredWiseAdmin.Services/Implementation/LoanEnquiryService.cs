@@ -1,52 +1,76 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using CredWiseAdmin.Services.Interfaces;
+// using CredWiseAdmin.Models;
+using CredWiseAdmin.Core.DTOs;
 using CredWiseAdmin.Core.Entities;
-using CredWiseAdmin.Core.Exceptions;
-using CredWiseAdmin.Repository.Interfaces;
 using Microsoft.Extensions.Logging;
 
-namespace CredWiseAdmin.Services
+namespace CredWiseAdmin.Services.Implementation
 {
-    public class LoanEnquiryService
+    public class LoanEnquiryService : ILoanEnquiryService
     {
+        private readonly ILoanEnquiryRepository _enquiryRepository;
         private readonly ILogger<LoanEnquiryService> _logger;
-        private readonly ILoanApplicationRepository _repository;
 
-        public LoanEnquiryService(ILogger<LoanEnquiryService> logger, ILoanApplicationRepository repository)
+        public LoanEnquiryService(
+            ILoanEnquiryRepository enquiryRepository,
+            ILogger<LoanEnquiryService> logger)
         {
+            _enquiryRepository = enquiryRepository;
             _logger = logger;
-            _repository = repository;
         }
 
-        public async Task<bool> SendToDecisionAppAsync(int id)
+        public async Task<ApiResponse<IEnumerable<LoanEnquiry>>> GetAllEnquiriesAsync()
         {
             try
             {
-                var application = await _repository.GetByIdAsync(id);
-                if (application == null)
-                    throw new NotFoundException($"Loan application with ID {id} not found.");
+                var enquiries = await _enquiryRepository.GetAllEnquiriesAsync();
+                
+                if (!enquiries.Any())
+                {
+                    return ApiResponse<IEnumerable<LoanEnquiry>>.CreateSuccess(
+                        new List<LoanEnquiry>(),
+                        "The list of enquiry is empty"
+                    );
+                }
 
-                if (application.Status != "Initial Review")
-                    throw new BadRequestException("Loan application is not in a valid state to send to decision app.");
-
-                // Simulate sending to decision app
-                // ...
-
-                return true;
-            }
-            catch (NotFoundException)
-            {
-                throw;
-            }
-            catch (BadRequestException)
-            {
-                throw;
+                return ApiResponse<IEnumerable<LoanEnquiry>>.CreateSuccess(
+                    enquiries,
+                    "Enquiries retrieved successfully"
+                );
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Error sending loan application to decision app");
-                throw new ServiceException("An unexpected error occurred while sending to decision app.", ex);
+                _logger.LogError(ex, "Error occurred while retrieving enquiries");
+                return ApiResponse<IEnumerable<LoanEnquiry>>.CreateError(
+                    "An error occurred while retrieving enquiries"
+                );
+            }
+        }
+
+        public async Task<ApiResponse<bool>> ToggleEnquiryStatusAsync(int id)
+        {
+            try
+            {
+                var result = await _enquiryRepository.ToggleEnquiryStatusAsync(id);
+                
+                if (!result)
+                {
+                    return ApiResponse<bool>.CreateError("Enquiry not found");
+                }
+
+                return ApiResponse<bool>.CreateSuccess(true, "Enquiry status updated successfully");
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error occurred while toggling enquiry status for ID: {Id}", id);
+                return ApiResponse<bool>.CreateError(
+                    "An error occurred while updating enquiry status"
+                );
             }
         }
     }
-} 
+}

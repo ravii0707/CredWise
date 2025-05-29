@@ -32,7 +32,7 @@ public partial class Fdtransaction
     public string TransactionStatus { get; set; } = null!;
 
     [StringLength(100)]
-    public string TransactionReference { get; set; } = null!;
+    public string? TransactionReference { get; set; }
 
     public bool IsActive { get; set; }
 
@@ -43,10 +43,10 @@ public partial class Fdtransaction
     public string CreatedBy { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
 
     [ForeignKey("FdapplicationId")]
     [InverseProperty("Fdtransactions")]

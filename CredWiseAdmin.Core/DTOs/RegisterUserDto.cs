@@ -1,4 +1,4 @@
-﻿// Extending existing RegisterUserDto with password
+﻿
 using System.ComponentModel.DataAnnotations;
 
 public class RegisterUserDto

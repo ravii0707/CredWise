@@ -342,6 +342,26 @@
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.LoanApplicationsController",
+    "Method": "GetAllLoanApplications",
+    "RelativePath": "api/LoanApplications",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[CredWiseAdmin.Core.DTOs.LoanApplicationResponseDto, CredWiseAdmin.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.LoanApplicationsController",
     "Method": "GetLoanApplicationById",
     "RelativePath": "api/LoanApplications/{id}",
     "HttpMethod": "GET",
@@ -412,6 +432,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.LoanApplicationsController",
+    "Method": "GenerateRepaymentPlan",
+    "RelativePath": "api/LoanApplications/{id}/generate-repayment-plan",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.LoanApplicationsController",
@@ -572,6 +608,32 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.LoanEnquiryController",
+    "Method": "GetAllEnquiries",
+    "RelativePath": "api/LoanEnquiry/getallenquiry",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "CredWiseAdmin.API.Controllers.LoanEnquiryController",
+    "Method": "ToggleEnquiryStatus",
+    "RelativePath": "api/LoanEnquiry/toggle/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "CredWiseAdmin.API.Controllers.LoanProductsController",

@@ -436,6 +436,42 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "LoanApplications"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/LoanApplicationResponseDto"
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/api/LoanApplications/{id}": {
@@ -819,6 +855,27 @@
             }
           }
         }
+      },
+      "get": {
+        "tags": [
+          "LoanApplications"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
     "/api/LoanApplications/generate-repayment-plan": {
@@ -870,6 +927,41 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/LoanEnquiry/getallenquiry": {
+      "get": {
+        "tags": [
+          "LoanEnquiry"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/LoanEnquiry/toggle/{id}": {
+      "put": {
+        "tags": [
+          "LoanEnquiry"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }
@@ -1552,6 +1644,14 @@
             "minimum": 1,
             "type": "number",
             "format": "double"
+          },
+          "loanAmount": {
+            "type": "number",
+            "format": "double"
+          },
+          "startDate": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false
@@ -1802,10 +1902,6 @@
           "interestRate": {
             "type": "number",
             "format": "double"
-          },
-          "purpose": {
-            "type": "string",
-            "nullable": true
           }
         },
         "additionalProperties": false
@@ -1870,10 +1966,6 @@
           "interestRate": {
             "type": "number",
             "format": "double"
-          },
-          "purpose": {
-            "type": "string",
-            "nullable": true
           },
           "loanApplicationId": {
             "type": "integer",
@@ -2232,45 +2324,50 @@
         },
         "additionalProperties": false
       },
-      "RepaymentPlanResponseDto": {
+      "RepaymentPlanDTO": {
         "type": "object",
         "properties": {
-          "loanApplicationId": {
+          "installmentNumber": {
             "type": "integer",
             "format": "int32"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date-time"
           },
           "principalAmount": {
             "type": "number",
             "format": "double"
           },
-          "interestRate": {
+          "interestAmount": {
             "type": "number",
             "format": "double"
           },
-          "tenureMonths": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "monthlyEmi": {
+          "totalAmount": {
             "type": "number",
             "format": "double"
           },
-          "totalInterest": {
+          "remainingBalance": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "RepaymentPlanResponseDto": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean"
           },
-          "totalRepayment": {
-            "type": "number",
-            "format": "double"
-          },
-          "startDate": {
+          "message": {
             "type": "string",
-            "format": "date-time"
+            "nullable": true
           },
-          "repayments": {
+          "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/LoanRepaymentDto"
+              "$ref": "#/components/schemas/RepaymentPlanDTO"
             },
             "nullable": true
           }

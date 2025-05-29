@@ -46,11 +46,6 @@ namespace CredWiseAdmin.Services.Implementation
                     throw new UnauthorizedAccessException("Invalid credentials");
                 }
 
-                if (!user.Role.Equals("Admin", StringComparison.OrdinalIgnoreCase))
-                {
-                    throw new UnauthorizedAccessException("Admin privileges required");
-                }
-
                 var token = GenerateJwtToken(user);
 
                 return new LoginResponseDto

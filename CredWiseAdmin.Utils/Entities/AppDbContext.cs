@@ -19,7 +19,11 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<Fdtype> Fdtypes { get; set; }
 
+    public virtual DbSet<GoldLoanApplication> GoldLoanApplications { get; set; }
+
     public virtual DbSet<GoldLoanDetail> GoldLoanDetails { get; set; }
+
+    public virtual DbSet<HomeLoanApplication> HomeLoanApplications { get; set; }
 
     public virtual DbSet<HomeLoanDetail> HomeLoanDetails { get; set; }
 
@@ -35,6 +39,8 @@ public partial class AppDbContext : DbContext
 
     public virtual DbSet<LoanRepaymentSchedule> LoanRepaymentSchedules { get; set; }
 
+    public virtual DbSet<Log> Logs { get; set; }
+
     public virtual DbSet<PaymentTransaction> PaymentTransactions { get; set; }
 
     public virtual DbSet<PersonalLoanDetail> PersonalLoanDetails { get; set; }
@@ -45,7 +51,7 @@ public partial class AppDbContext : DbContext
     {
         modelBuilder.Entity<DecisionAppLog>(entity =>
         {
-            entity.HasKey(e => e.LogId).HasName("PK__Decision__5E548648FC39C733");
+            entity.HasKey(e => e.LogId).HasName("PK__Decision__5E548648AC8B9A9E");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
@@ -53,28 +59,28 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.LoanApplication).WithMany(p => p.DecisionAppLogs)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__DecisionA__LoanA__1DB06A4F");
+                .HasConstraintName("FK__DecisionA__LoanA__0C85DE4D");
         });
 
         modelBuilder.Entity<Fdapplication>(entity =>
         {
-            entity.HasKey(e => e.FdapplicationId).HasName("PK__FDApplic__5A2486C095E84D9E");
+            entity.HasKey(e => e.FdapplicationId).HasName("PK__FDApplic__5A2486C043A982AE");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
 
             entity.HasOne(d => d.Fdtype).WithMany(p => p.Fdapplications)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__FDApplica__FDTyp__10566F31");
+                .HasConstraintName("FK__FDApplica__FDTyp__0D7A0286");
 
             entity.HasOne(d => d.User).WithMany(p => p.Fdapplications)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__FDApplica__UserI__0F624AF8");
+                .HasConstraintName("FK__FDApplica__UserI__0E6E26BF");
         });
 
         modelBuilder.Entity<Fdtransaction>(entity =>
         {
-            entity.HasKey(e => e.FdtransactionId).HasName("PK__FDTransa__76CF381FEA20E48E");
+            entity.HasKey(e => e.FdtransactionId).HasName("PK__FDTransa__76CF381F1C7EAE46");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
@@ -82,20 +88,29 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.Fdapplication).WithMany(p => p.Fdtransactions)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__FDTransac__FDApp__17F790F9");
+                .HasConstraintName("FK__FDTransac__FDApp__0F624AF8");
         });
 
         modelBuilder.Entity<Fdtype>(entity =>
         {
-            entity.HasKey(e => e.FdtypeId).HasName("PK__FDTypes__FFD0291BDED02890");
+            entity.HasKey(e => e.FdtypeId).HasName("PK__FDTypes__FFD0291BD069EBDD");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
         });
 
+        modelBuilder.Entity<GoldLoanApplication>(entity =>
+        {
+            entity.HasKey(e => e.GoldLoanAppId).HasName("PK__GoldLoan__BD7F0043D33979CF");
+
+            entity.HasOne(d => d.LoanApplication).WithMany(p => p.GoldLoanApplications)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__GoldLoanA__LoanA__10566F31");
+        });
+
         modelBuilder.Entity<GoldLoanDetail>(entity =>
         {
-            entity.HasKey(e => e.LoanProductId).HasName("PK__GoldLoan__0D22CCC2A858BDD2");
+            entity.HasKey(e => e.LoanProductId).HasName("PK__GoldLoan__0D22CCC2361E90BE");
 
             entity.Property(e => e.LoanProductId).ValueGeneratedNever();
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
@@ -103,12 +118,21 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.LoanProduct).WithOne(p => p.GoldLoanDetail)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__GoldLoanD__LoanP__628FA481");
+                .HasConstraintName("FK__GoldLoanD__LoanP__114A936A");
+        });
+
+        modelBuilder.Entity<HomeLoanApplication>(entity =>
+        {
+            entity.HasKey(e => e.HomeLoanAppId).HasName("PK__HomeLoan__08F023772BB46EE2");
+
+            entity.HasOne(d => d.LoanApplication).WithMany(p => p.HomeLoanApplications)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__HomeLoanA__LoanA__123EB7A3");
         });
 
         modelBuilder.Entity<HomeLoanDetail>(entity =>
         {
-            entity.HasKey(e => e.LoanProductId).HasName("PK__HomeLoan__0D22CCC21811B8E9");
+            entity.HasKey(e => e.LoanProductId).HasName("PK__HomeLoan__0D22CCC2EC79413F");
 
             entity.Property(e => e.LoanProductId).ValueGeneratedNever();
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
@@ -116,28 +140,28 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.LoanProduct).WithOne(p => p.HomeLoanDetail)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__HomeLoanD__LoanP__59063A47");
+                .HasConstraintName("FK__HomeLoanD__LoanP__1332DBDC");
         });
 
         modelBuilder.Entity<LoanApplication>(entity =>
         {
-            entity.HasKey(e => e.LoanApplicationId).HasName("PK__LoanAppl__F60027BD8B8A4CF5");
+            entity.HasKey(e => e.LoanApplicationId).HasName("PK__LoanAppl__F60027BD921E9060");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
 
             entity.HasOne(d => d.LoanProduct).WithMany(p => p.LoanApplications)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LoanAppli__LoanP__6FE99F9F");
+                .HasConstraintName("FK__LoanAppli__LoanP__14270015");
 
             entity.HasOne(d => d.User).WithMany(p => p.LoanApplications)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LoanAppli__UserI__6EF57B66");
+                .HasConstraintName("FK__LoanAppli__UserI__151B244E");
         });
 
         modelBuilder.Entity<LoanBankStatement>(entity =>
         {
-            entity.HasKey(e => e.BankStatementId).HasName("PK__LoanBank__D4AD9FA43C3BC6BF");
+            entity.HasKey(e => e.BankStatementId).HasName("PK__LoanBank__D4AD9FA4D6AAB1D6");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
@@ -145,23 +169,21 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.LoanApplication).WithMany(p => p.LoanBankStatements)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LoanBankS__LoanA__76969D2E");
+                .HasConstraintName("FK__LoanBankS__LoanA__160F4887");
 
-            entity.HasOne(d => d.VerifiedByNavigation).WithMany(p => p.LoanBankStatements)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LoanBankS__Verif__778AC167");
+            entity.HasOne(d => d.VerifiedByNavigation).WithMany(p => p.LoanBankStatements).HasConstraintName("FK__LoanBankS__Verif__17036CC0");
         });
 
         modelBuilder.Entity<LoanEnquiry>(entity =>
         {
-            entity.HasKey(e => e.EnquiryId).HasName("PK__LoanEnqu__0A019B7D417F16A5");
+            entity.HasKey(e => e.EnquiryId).HasName("PK__LoanEnqu__0A019B7DBAF502DE");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
         });
 
         modelBuilder.Entity<LoanProduct>(entity =>
         {
-            entity.HasKey(e => e.LoanProductId).HasName("PK__LoanProd__0D22CCC2C0E64D8F");
+            entity.HasKey(e => e.LoanProductId).HasName("PK__LoanProd__0D22CCC2F1619D3D");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
@@ -169,19 +191,21 @@ public partial class AppDbContext : DbContext
 
         modelBuilder.Entity<LoanProductDocument>(entity =>
         {
-            entity.HasKey(e => e.LoanProductDocumentId).HasName("PK__LoanProd__D85B694F0D5F49BF");
+            entity.HasKey(e => e.LoanProductDocumentId).HasName("PK__LoanProd__D85B694FD1A6229C");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
 
+            entity.HasOne(d => d.LoanApplication).WithMany(p => p.LoanProductDocuments).HasConstraintName("FK__LoanProdu__LoanA__17F790F9");
+
             entity.HasOne(d => d.LoanProduct).WithMany(p => p.LoanProductDocuments)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LoanProdu__LoanP__6754599E");
+                .HasConstraintName("FK__LoanProdu__LoanP__18EBB532");
         });
 
         modelBuilder.Entity<LoanRepaymentSchedule>(entity =>
         {
-            entity.HasKey(e => e.RepaymentId).HasName("PK__LoanRepa__10AD21F27C6F407A");
+            entity.HasKey(e => e.RepaymentId).HasName("PK__LoanRepa__10AD21F2821F615C");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
@@ -189,12 +213,17 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.LoanApplication).WithMany(p => p.LoanRepaymentSchedules)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__LoanRepay__LoanA__7E37BEF6");
+                .HasConstraintName("FK__LoanRepay__LoanA__19DFD96B");
+        });
+
+        modelBuilder.Entity<Log>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Logs__3214EC078D6788CC");
         });
 
         modelBuilder.Entity<PaymentTransaction>(entity =>
         {
-            entity.HasKey(e => e.TransactionId).HasName("PK__PaymentT__55433A6BF345DF0E");
+            entity.HasKey(e => e.TransactionId).HasName("PK__PaymentT__55433A6BDDF2F2F0");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
@@ -202,16 +231,16 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.LoanApplication).WithMany(p => p.PaymentTransactions)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__PaymentTr__LoanA__04E4BC85");
+                .HasConstraintName("FK__PaymentTr__LoanA__1AD3FDA4");
 
             entity.HasOne(d => d.Repayment).WithMany(p => p.PaymentTransactions)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__PaymentTr__Repay__05D8E0BE");
+                .HasConstraintName("FK__PaymentTr__Repay__1BC821DD");
         });
 
         modelBuilder.Entity<PersonalLoanDetail>(entity =>
         {
-            entity.HasKey(e => e.LoanProductId).HasName("PK__Personal__0D22CCC2566C80F8");
+            entity.HasKey(e => e.LoanProductId).HasName("PK__Personal__0D22CCC2E53A9142");
 
             entity.Property(e => e.LoanProductId).ValueGeneratedNever();
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
@@ -219,12 +248,12 @@ public partial class AppDbContext : DbContext
 
             entity.HasOne(d => d.LoanProduct).WithOne(p => p.PersonalLoanDetail)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__PersonalL__LoanP__5DCAEF64");
+                .HasConstraintName("FK__PersonalL__LoanP__1CBC4616");
         });
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C6495B77B");
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4C225C0E65");
 
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.IsActive).HasDefaultValue(true);

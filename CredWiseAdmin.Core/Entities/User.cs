@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CredWiseAdmin.Core.Entities;
 
-[Index("Email", Name = "UQ__Users__A9D1053496D96431", IsUnique = true)]
+[Index("Email", Name = "UQ__Users__A9D1053424FBC403", IsUnique = true)]
 public partial class User
 {
     [Key]
@@ -37,10 +37,10 @@ public partial class User
     public string? CreatedBy { get; set; }
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
 
     public bool? IsActive { get; set; }
 

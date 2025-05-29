@@ -1,4 +1,5 @@
 ﻿using CredWiseAdmin.Core.DTOs;
+using CredWiseAdmin.Core.Exceptions;
 using CredWiseAdmin.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -131,7 +132,7 @@ namespace CredWiseAdmin.API.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("{id}/generate-repayment-plan")]
+        [HttpPost("{id}/generate-EMI-plan")]
         public async Task<ActionResult<RepaymentPlanResponseDto>> GenerateRepaymentPlan(int id, [FromBody] EmiPlanDto emiPlanDto)
         {
             emiPlanDto.LoanId = id;
@@ -144,6 +145,76 @@ namespace CredWiseAdmin.API.Controllers
         {
             var plan = await _loanApplicationService.GenerateRepaymentPlanAsync(emiPlanDto);
             return Ok(plan);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public async Task<ActionResult<IEnumerable<LoanApplicationResponseDto>>> GetAllLoanApplications()
+        {
+            try
+            {
+                _logger.LogInformation("Received request to fetch all loan applications");
+                
+                var applications = await _loanApplicationService.GetAllLoanApplicationsAsync();
+                
+                _logger.LogInformation("Successfully retrieved {Count} loan applications", applications.Count());
+                return Ok(applications);
+            }
+            catch (NotFoundException ex)
+            {
+                _logger.LogWarning(ex, "No loan applications found");
+                return NotFound(new { message = ex.Message });
+            }
+            catch (ServiceException ex)
+            {
+                _logger.LogError(ex, "Service error while fetching loan applications");
+                return StatusCode(500, new { message = ex.Message });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Unexpected error while fetching loan applications");
+                return StatusCode(500, new { message = "An unexpected error occurred. Please try again later." });
+            }
+        }
+
+        [HttpGet("{id}/generate-repayment-plan")]
+        public async Task<IActionResult> GenerateRepaymentPlan(int id)
+        {
+            try
+            {
+                var loanApplication = await _loanApplicationService.GetLoanApplicationByIdAsync(id);
+                if (loanApplication == null)
+                {
+                    return Ok(new RepaymentPlanResponseDto
+                    {
+                        Success = true,
+                        Message = "There are no loan EMI payments",
+                        Data = new List<RepaymentPlanDTO>()
+                    });
+                }
+
+                var emiPlanDto = new EmiPlanDto
+                {
+                    LoanId = id,
+                    LoanAmount = loanApplication.RequestedAmount,
+                    InterestRate = loanApplication.InterestRate,
+                    TenureInMonths = loanApplication.RequestedTenure,
+                    StartDate = DateTime.UtcNow
+                };
+
+                var response = await _loanApplicationService.GenerateRepaymentPlanAsync(emiPlanDto);
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, "Error generating repayment plan for loan application {Id}", id);
+                return Ok(new RepaymentPlanResponseDto
+                {
+                    Success = false,
+                    Message = "An error occurred while generating the repayment plan",
+                    Data = new List<RepaymentPlanDTO>()
+                });
+            }
         }
     }
 }

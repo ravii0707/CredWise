@@ -11,18 +11,30 @@ public partial class LoanEnquiry
     [Key]
     public int EnquiryId { get; set; }
 
+    [Required]
     [StringLength(100)]
-    public string Name { get; set; } = null!;
+    public string Name { get; set; }
 
+    [StringLength(100)]
+    public string? Email { get; set; }
+
+    [Required]
     [StringLength(15)]
-    public string PhoneNumber { get; set; } = null!;
+    public string Phone { get; set; }
 
-    [Column(TypeName = "decimal(18, 2)")]
-    public decimal LoanAmountRequired { get; set; }
+    [Required]
+    public string Message { get; set; }
 
-    [StringLength(255)]
-    public string LoanPurpose { get; set; } = null!;
+    [StringLength(20)]
+    public string? Status { get; set; }
 
-    [Column(TypeName = "datetime")]
     public DateTime CreatedAt { get; set; }
+
+    [StringLength(100)]
+    public string? ResolvedBy { get; set; }
+
+    public DateTime? ResolvedAt { get; set; }
+
+    [StringLength(500)]
+    public string? ResolutionNote { get; set; }
 }

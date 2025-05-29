@@ -1,12 +1,8 @@
 using CredWiseAdmin.Core.Entities;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 
-namespace CredWiseAdmin.Repository.Interfaces
+public interface ILoanEnquiryRepository
 {
-    public interface ILoanEnquiryRepository
-    {
-        Task<IEnumerable<LoanEnquiry>> GetAllAsync();
-        Task<LoanEnquiry> GetByIdAsync(int id);
-    }
-} 
+    Task<IEnumerable<LoanEnquiry>> GetAllEnquiriesAsync();
+    Task<LoanEnquiry> GetEnquiryByIdAsync(int id);
+    Task<bool> ToggleEnquiryStatusAsync(int id);
+}

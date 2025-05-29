@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CredWiseAdmin.Core.Entities;
 
-[Index("Aadhaar", Name = "UQ__LoanAppl__C4B333692BC825F9", IsUnique = true)]
+[Index("Aadhaar", Name = "UQ__LoanAppl__C4B333694F1AB2B2", IsUnique = true)]
 public partial class LoanApplication
 {
     [Key]
@@ -46,10 +46,10 @@ public partial class LoanApplication
     public string Status { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
-    public DateTime DecisionDate { get; set; }
+    public DateTime? DecisionDate { get; set; }
 
     [StringLength(500)]
-    public string DecisionReason { get; set; } = null!;
+    public string? DecisionReason { get; set; }
 
     public bool? IsActive { get; set; }
 
@@ -57,16 +57,22 @@ public partial class LoanApplication
     public DateTime? CreatedAt { get; set; }
 
     [StringLength(100)]
-    public string CreatedBy { get; set; } = null!;
+    public string? CreatedBy { get; set; }
 
     [Column(TypeName = "datetime")]
-    public DateTime ModifiedAt { get; set; }
+    public DateTime? ModifiedAt { get; set; }
 
     [StringLength(100)]
-    public string ModifiedBy { get; set; } = null!;
+    public string? ModifiedBy { get; set; }
 
     [InverseProperty("LoanApplication")]
     public virtual ICollection<DecisionAppLog> DecisionAppLogs { get; set; } = new List<DecisionAppLog>();
+
+    [InverseProperty("LoanApplication")]
+    public virtual ICollection<GoldLoanApplication> GoldLoanApplications { get; set; } = new List<GoldLoanApplication>();
+
+    [InverseProperty("LoanApplication")]
+    public virtual ICollection<HomeLoanApplication> HomeLoanApplications { get; set; } = new List<HomeLoanApplication>();
 
     [InverseProperty("LoanApplication")]
     public virtual ICollection<LoanBankStatement> LoanBankStatements { get; set; } = new List<LoanBankStatement>();
@@ -74,6 +80,9 @@ public partial class LoanApplication
     [ForeignKey("LoanProductId")]
     [InverseProperty("LoanApplications")]
     public virtual LoanProduct LoanProduct { get; set; } = null!;
+
+    [InverseProperty("LoanApplication")]
+    public virtual ICollection<LoanProductDocument> LoanProductDocuments { get; set; } = new List<LoanProductDocument>();
 
     [InverseProperty("LoanApplication")]
     public virtual ICollection<LoanRepaymentSchedule> LoanRepaymentSchedules { get; set; } = new List<LoanRepaymentSchedule>();

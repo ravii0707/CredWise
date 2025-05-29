@@ -19,5 +19,6 @@ namespace CredWiseAdmin.Services.Interfaces
         Task<bool> UpdateLoanStatusAsync(int loanApplicationId, string status, string reason);
         Task<bool> FinalizeRepaymentAsync(int loanApplicationId);
         Task<RepaymentPlanResponseDto> GenerateRepaymentPlanAsync(EmiPlanDto emiPlanDto);
+        Task<IEnumerable<LoanApplicationResponseDto>> GetAllLoanApplicationsAsync();
     }
 }
